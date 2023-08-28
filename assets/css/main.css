@@ -1598,7 +1598,18 @@ ul li .icon-box.icon-style-border i{
     background-repeat: no-repeat;
     background-position: center;
 }
-div.ttm-page-title-row > .ttm-bg-layer { background-color: #FE0000 }
+div.ttm-page-title-row > .ttm-bg-layer { 
+  background: url('../images/breadcrumb.jpg');
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+div.ttm-page-title-row > .Privacy-Policy { 
+  background: url('../images/privacy-breadcrumb.jpg');
+  background-position: start;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
 .ttm-page-title-row { 
     display: block;
     padding-top: 100px; 
@@ -3254,7 +3265,54 @@ section.error-404 .page-content p { font-size: 18px; margin-bottom: 30px; }
   padding: 7px 12px !important;
   margin-top: 10px;
 }
-
+.work-process .works .card{
+  background: #fff;
+  box-shadow: 0px 6px 10px 3px #eae0e0;
+  padding: 25px;
+  border-radius: 0px;
+  border-top: 3px solid #fe0000;
+  position: relative;
+  transition: 0.8s;
+}
+.work-process .works .card .work-process-number{
+  transition: 0.8s;
+  background: #fff;
+  border: 3px solid #fe0000;
+  width: 80px;
+  height: 80px;
+  font-size: 20px;
+  font-weight: bold;
+  border-radius: 50%;
+  color: #182333;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  top: -19%;
+  left: 50%;
+  position: absolute;
+  transform: translate(-50%, 0%);
+}
+.work-process .works .card .card-title{
+  margin-top: 30px;
+  transition: 0.8s;
+}
+.work-process .works .card i{
+  font-size: 40px;
+  transition: 0.8s;
+}
+.work-process .works .card:hover{
+  box-shadow: none;
+}
+.work-process .works .card:hover .card-title{
+  color: #fe0000;
+}
+.work-process .works .card:hover i{
+  color: #fe0000;
+}
+.work-process .works .card:hover .work-process-number{
+  color: #fff;
+  background: #fe0000;
+}
 
 @media screen and (min-width: 1200px){  
   .carousel-inner .carousel-item > img{

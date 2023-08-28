@@ -289,7 +289,7 @@
                             <p>Lorem, ipsum dolor sit, amet consectetur adipisicing elit. Quod itaque laudantium, nihil et mollitia non. Necessitatibus, itaque!</p>
                         </div>
                     </div>
-                    <div class="row mb-4 mt-2">
+                    <div class="row mb-15 mt-2">
                         <div class="col item-menu">
                             <button class="btn" data-filter="">All</button>
                             <button class="btn" data-filter=".fish">Items</button>
@@ -302,7 +302,6 @@
                     <div class="row mt-5 item-details" style="position: relative; height: 4019.77px;">
                         <div class="col-md-4 item cat" style="position: absolute; left: 0px; top: 0px;">
                             <img src="assets/images/gallery/01.jpg" alt="img" class="img-fluid rounded">
-                            <img src="assets/images/gallery/02.jpg" alt="img" class="img-fluid rounded">
                         </div>
                         <div class="col-md-4 item cat" style="position: absolute; left: 380px; top: 0px;">
                             <img src="assets/images/gallery/02.jpg" alt="img" class="img-fluid rounded">
@@ -452,7 +451,7 @@
                 <div class="container">
                     <div class="row copyright">
                         <div class="col-md-8 ttm-footer2-left">
-                            <span>Copyright © 2017 - 2023 DESIGN AND DEVELOPMENT BY RAYHANS ICT LIMITED</span>
+                            <span>Copyright © 2017 - 2023 DESIGN AND DEVELOPED BY CREATIVE SHEBA</span>
                         </div>
                         <div class="col-md-4 ttm-footer2-right">
                            <div class="social-icons">
@@ -519,9 +518,9 @@
     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery.isotope/3.0.6/isotope.pkgd.min.js"></script>
     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/magnific-popup.js/1.1.0/jquery.magnific-popup.min.js"></script>
     <script>
-        $(function() {
-            $('item-details').magnificPopup({delegate: 'button', type: 'image' });
-        })
+        $('.cat').magnificPopup({
+          type: 'image'
+        });
     </script>
     <script type="text/javascript">
         // init Isotope
