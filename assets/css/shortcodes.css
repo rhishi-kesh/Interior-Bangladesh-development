@@ -1790,7 +1790,7 @@ body{ counter-reset: section; }
 padding: 14px 20px; text-transform: uppercase; font-size: 18px; line-height: 27px; margin: 0; border-radius: 0;}
 
 /* ttm-tab-style-horizontal */
-.ttm-tabs.ttm-tab-style-horizontal ul{ margin: 0; padding: 0; display: -webkit-flex; display: flex; }
+/*.ttm-tabs.ttm-tab-style-horizontal ul{ margin: 0; padding: 0; display: -webkit-flex; display: flex; }*/
 .ttm-tabs.ttm-tab-style-horizontal ul.tabs li{ margin-right: 6px; display: inline-block; }
 .ttm-tabs.ttm-tab-style-horizontal ul.tabs li:last-child{ margin-right: 0; }
 .ttm-tabs.ttm-tab-style-horizontal ul.tabs li a{ padding: 16px 18px 15px 18px; font-size: 15px; border-radius: 5px; 
