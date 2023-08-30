@@ -1,74 +1,6 @@
-/**
-  * Name: Boldman
-  * Version: 1.3
-  * Author: ThemetechMount
-  * Author URI: http://www.themetechmount.com
-*/
-
 @import url('https://fonts.googleapis.com/css?family=Poppins:200,200i,300,300i,400,400i,500,500i,600,600i,700,700i');
 @import url('https://fonts.googleapis.com/css?family=Ubuntu:400,400i,500,500i,700,700i');
 @import url('https://fonts.googleapis.com/css2?family=Jura:wght@300;400;500;600;700&display=swap');
-/**
-
-  1. General
-     - Variables
-     - Transition
-     - Shadow
-     - Extra-outer
-
-  2. Spacing
-     - Padding
-     - Margin
-
-  3. Color
-     - Skin-color, Skin-bg-color, Skin-border-color
-     - darkGrey-color, darkGrey-bg-color
-     - white-color, white-bg-color, white-border-color
-     - Grey-color, Grey-bg-color, grey-border-color
-     - Extra-color
-
-  4. Pre-loader
-
-  5. TooltipTop
-
-  6. TopBar
-
-  7. Header
-     - SiteBrand(logo)
-     - SiteNavigation(Menu)
-     - ttm-rt-contact(HeaderIcons - Search, Cart)
-     - ttm-search-overlay
-
-  8. Footer
-     - FirstFooter
-     - SecondFooter
-     - menu-footer-services
-     - mailchimp-inputbox
-     - flicker-widget
-     - Footer-nav-menu
-
-  9. GoTop BUtton
-  
-  10. Page-Title-Row
-
-  12. Inner-Pages
-      - About_us_1
-      - Services_1
-      - team-member-single
-      - Contact_Us_1
-      - Carrer
-      - Single_Style_1/Project_Single_Style_1
-      - Single_Style_2/Project_Single_Style_2
-      - Classic_Blog
-      - Single_Blog
-      - Elements_page
-      - Map
-
-**/
- 
-/* ===============================================
-    General
-------------------------*/
 
 /** Variables **/
 article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, section { 
@@ -2434,6 +2366,27 @@ section.error-404 .page-content p { font-size: 18px; margin-bottom: 30px; }
   background: #fff;
   border: 1px solid #FE0000;
   color: #000 !important;
+}
+.service-home{
+  background: linear-gradient(rgba(0,0,0,0.8),rgba(0,0,0,0.8)),url('../images/service.jpg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+}
+.team-home{
+  background: linear-gradient(rgba(0,0,0,0.8),rgba(0,0,0,0.8)),url('../images/team.jpg') !important;
+  background-size: cover !important;
+  background-position: center !important;
+  background-repeat: no-repeat !important;
+  background-attachment: fixed !important;
+}
+.blog-home{
+  background: linear-gradient(rgba(0,0,0,0.8),rgba(0,0,0,0.8)),url('../images/blog.jpg') !important;
+  background-size: cover !important;
+  background-position: center !important;
+  background-repeat: no-repeat !important;
+  background-attachment: fixed !important;
 }
 .service-home .categories ul li a{
   display: inline-block;
