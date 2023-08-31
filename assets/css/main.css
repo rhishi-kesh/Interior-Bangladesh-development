@@ -3212,8 +3212,14 @@ section.error-404 .page-content p { font-size: 18px; margin-bottom: 30px; }
 }
 .gallery-images .item-details img{
   margin-bottom: 5px !important;
-  max-width: 300px;
-
+  max-width: 100%;
+  filter: grayscale(70%);
+}
+.gallery-images .item-details .item:hover img{
+  filter: grayscale(0);
+}
+.gallery-images .item-details .item{
+    cursor: pointer;  
 }
 .gallery-images .item-menu button{
   background-color: #fe0000 !important;
