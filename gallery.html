@@ -13,6 +13,7 @@
 <link rel="stylesheet" type="text/css" href="assets/css/animate.css"/>
 <!-- magnific-popup -->
 <link rel="stylesheet" type="text/css" href="assets/css/lightgallery-bundle.min.css"/>
+<!-- <link rel="stylesheet" type="text/css" href="assets/css/lg-thumbnail.css"/> -->
 
 <!-- owl-carousel -->
 <link rel="stylesheet" type="text/css" href="assets/css/owl.carousel.css">
@@ -300,7 +301,7 @@
                     </div>
                     <div class="row mt-5 item-details" style="position: relative; height: 4019.77px;">
                         <div class="col-12 item" id="rhishi">
-                            <a href="assets/images/gallery/01.jpg" class="cat" data-lg-thumbnail="assets/images/gallery/01.jpg">
+                            <a href="assets/images/gallery/01.jpg" data-sub-html="<h1>Category Name</h1>" class="cat" data-lg-thumbnail="assets/images/gallery/01.jpg">
                                 <img src="assets/images/gallery/01.jpg" alt="img" class="img-fluid rounded">
                             </a>
                             <a href="assets/images/gallery/02.jpg" class="cat" data-lg-thumbnail="assets/images/gallery/02.jpg">
@@ -518,6 +519,7 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/Counter-Up/1.0.0/jquery.counterup.js"></script><!-- Required File For Plagin -->
     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery.isotope/3.0.6/isotope.pkgd.min.js"></script>
     <script type="text/javascript" src="assets/js/lightgallery.min.js"></script>
+    <script type="text/javascript" src="assets/js/lg-thumbnail.min.js"></script>
 
     <script>
         lightGallery(document.getElementById('rhishi'), {
@@ -525,6 +527,7 @@
             counter: false,
             showCloseIcon: true,
             download: false,
+            plugins: [lgThumbnail],
             loop: false,
             thumbnail: true
         });
