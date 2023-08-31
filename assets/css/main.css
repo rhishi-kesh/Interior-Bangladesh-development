@@ -3211,7 +3211,9 @@ section.error-404 .page-content p { font-size: 18px; margin-bottom: 30px; }
   line-height: 24px;
 }
 .gallery-images .item-details img{
-  margin-bottom: 15px !important;
+  margin-bottom: 5px !important;
+  max-width: 300px;
+
 }
 .gallery-images .item-menu button{
   background-color: #fe0000 !important;
@@ -3266,6 +3268,13 @@ section.error-404 .page-content p { font-size: 18px; margin-bottom: 30px; }
   color: #fff;
   background: #fe0000;
 }
+.lg-toolbar .lg-download::after {
+  content: '\f019' !important;
+}
+
+
+
+
 
 @media screen and (min-width: 1200px){  
   .carousel-inner .carousel-item > img{

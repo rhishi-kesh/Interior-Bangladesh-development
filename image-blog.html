@@ -50,6 +50,8 @@
 <!-- responsive -->
 <link rel="stylesheet" type="text/css" href="assets/css/responsive.css"/>
 
+<!-- lightGallery -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/lightgallery/2.7.1/css/lightgallery-bundle.min.css">
 </head>
 
 <body>
@@ -562,7 +564,7 @@
     <script src="assets/js/isotope.pkgd.min.js"></script>
     <script src="assets/js/numinate.min6959.js?ver=4.9.3"></script>
     <script src="assets/js/main.js"></script>
-
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/lightgallery/2.7.1/lightgallery.min.js">
     <!-- Revolution Slider -->
     <script src="assets/revolution/js/jquery.themepunch.tools.min.js"></script>
     <script src="assets/revolution/js/jquery.themepunch.revolution.min.js"></script>
@@ -604,6 +606,14 @@
         AOS.init({
             offset: 200,
             duration:3000
+        });
+    </script>
+    <script type="text/javascript">
+        lightGallery(document.getElementById('lightgallery'), {
+            plugins: [lgZoom, lgThumbnail],
+            speed: 500,
+            licenseKey: 'your_license_key'
+            ... other settings
         });
     </script>
     <!-- Javascript end-->
