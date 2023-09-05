@@ -28,12 +28,12 @@
         </tr>
         </thead>
         <tbody>
-        @forelse ($slides as $key => $slide)
+        @forelse ($services as $key => $service)
             <tr id="7" class="gradeA odd">
-                <td tabindex="1" class="sorting_1">{{ $slides->firstItem() + $key }}</td>
-                <td tabindex="1">{{ Str::limit($slide->title, 100, '...') }}</td>
+                <td tabindex="1" class="sorting_1">{{ $services->firstItem() + $key }}</td>
+                <td tabindex="1">{{ Str::limit($service->service_name, 100, '...') }}</td>
                 <td tabindex="1">
-                    <a class="btn waves-effect waves-light btn-success mt-2" href="{{ url('slide-edit') }}/{{ $slide->id }}">
+                    <a class="btn waves-effect waves-light btn-success mt-2" href="{{ route('slideedit',$service->id ) }}">
                         <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-edit-circle" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
                             <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
                             <path d="M12 15l8.385 -8.415a2.1 2.1 0 0 0 -2.97 -2.97l-8.415 8.385v3h3z"></path>
@@ -42,7 +42,7 @@
                         </svg>
                         Edit
                     </a>
-                    <a class="btn waves-effect waves-light btn-danger mt-2" href="{{ route('slidedelete',$slide->id) }}" onclick="return confirm('Are you sure you want to delete?')">
+                    <a class="btn waves-effect waves-light btn-danger mt-2" href="{{ route('servicedelete',$service->id) }}" onclick="return confirm('Are you sure you want to delete?')">
                         <i class="ti ti-trash fs-5"></i>
                         Delete
                     </a>

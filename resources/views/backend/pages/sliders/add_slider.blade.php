@@ -4,7 +4,13 @@
 
 <div class="card">
     <div class="card-body">
-      <h5 class="mb-3">Add a Slide</h5>
+        @if(Session::has('success'))
+        <div class="alert alert-success alert-dismissible bg-success text-white border-0 fade show" role="alert">
+            <button type="button" class="btn-close btn-close-white" data-bs-dismiss="alert" aria-label="Close"></button>
+            {{ Session::get('success') }}
+        </div>
+        @endif
+      <h4 class="mb-3">Add a Slide</h4>
       <form action="{{ route('add-sliderpost') }}" method="post" enctype="multipart/form-data">
         @csrf
         <div class="row">
@@ -31,16 +37,25 @@
             </div>
           <div class="col-md-12 mb-3">
             <label for="formFile" class="form-label">Select Background Image</label>
-            <input class="form-control form-control-lg rounded-1  @error('bg_image') is-invalid @enderror" type="file" id="formFile" name="bg_image">
+            <input class="form-control form-control-lg rounded-1  @error('bg_image') is-invalid @enderror" type="file" id="imgInp" name="bg_image">
             @error('bg_image')
                 <div class="alert alert-danger">{{ $message }}</div>
             @enderror
+            <img id="blah" src="#" alt="Image Preview" style="max-width: 200px; max-height: 100px;" class="mt-3">
+            @section('jss')
+                <script>
+                    imgInp.onchange = evt => {
+                    const [file] = imgInp.files
+                    if (file) {
+                    blah.src = URL.createObjectURL(file)
+                    }
+                }
+                </script>
+            @endsection
         </div>
           <div class="col-md-12 mb-3">
             <label for="subtitle" class="form-label">Subtitle</label>
-            <textarea name="subtitle" rows="10" class="ckeditor form-control @error('subtitle') is-invalid @enderror" id="subtitle">
-                {{ old('subtitle') }}
-            </textarea>
+            <textarea name="subtitle" rows="5" class="ckeditor form-control @error('subtitle') is-invalid @enderror" id="subtitle">{{ old('subtitle') }}</textarea>
             @error('subtitle')
                 <div class="alert alert-danger">{{ $message }}</div>
             @enderror
@@ -61,14 +76,4 @@
       </form>
     </div>
   </div>
-  @section('jss')
-  <script>
-    ClassicEditor
-        .create( document.querySelector( '#subtitle' ) )
-        .catch( error => {
-            console.error( error );
-        } );
-</script>
-
-  @endsection
 @endsection
