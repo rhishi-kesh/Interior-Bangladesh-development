@@ -16,7 +16,7 @@
         <div class="row">
             <div class="col-md-12 mb-3">
                 <label for="why_choose_us" class="form-label">Why Choose Us</label>
-                <textarea class="form-control form-control-lg rounded-1 @error('why_choose_us') is-invalid @enderror" name="why_choose_us" id="why_choose_us" placeholder="Why Choose Us" rows="5"></textarea>
+                <textarea class="form-control form-control-lg rounded-1 @error('why_choose_us') is-invalid @enderror" name="why_choose_us" id="why_choose_us" placeholder="Why Choose Us" rows="5">{{ $about->choose_us }}</textarea>
                 @error('why_choose_us')
                     <div class="alert alert-danger">{{ $message }}</div>
                 @enderror

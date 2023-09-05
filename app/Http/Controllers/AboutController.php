@@ -8,7 +8,9 @@ use Illuminate\Support\Facades\DB;
 
 class AboutController extends Controller
 {
-    function about(){
-        return view('backend.pages.about.about');
+    function about()
+    {
+        $about = About::first();
+        return view('backend.pages.about.about', compact('about'));
     }
 }

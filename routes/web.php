@@ -5,6 +5,8 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\SliderController;
 use App\Http\Controllers\AboutController;
 use App\Http\Controllers\ServiceController;
+use App\Http\Controllers\TeamController;
+use App\Http\Controllers\ClientReviewController;
 
 /*
 |--------------------------------------------------------------------------
@@ -42,6 +44,22 @@ Route::get('/slide-delete/{id}', [App\Http\Controllers\SliderController::class, 
 Route::get('/add-service', [App\Http\Controllers\ServiceController::class, 'addservice'])->name('add-service');
 Route::post('/add-service-post', [App\Http\Controllers\ServiceController::class, 'addservicepost'])->name('add-servicepost');
 Route::get('/services', [App\Http\Controllers\ServiceController::class, 'services'])->name('services');
-Route::get('/service-edit/{id}', [App\Http\Controllers\ServiceController::class, 'serviceedit'])->name('slideedit');
+Route::get('/service-edit/{id}', [App\Http\Controllers\ServiceController::class, 'serviceedit'])->name('serviceedit');
 Route::post('/update-service-post', [App\Http\Controllers\ServiceController::class, 'updateservice'])->name('updateservice');
 Route::get('/service-delete/{id}', [App\Http\Controllers\ServiceController::class, 'servicedelete'])->name('servicedelete');
+
+//Team
+Route::get('/add-team', [App\Http\Controllers\TeamController::class, 'addteam'])->name('add-team');
+Route::post('/add-team-post', [App\Http\Controllers\TeamController::class, 'addteampost'])->name('add-addteampost');
+Route::get('/team', [App\Http\Controllers\TeamController::class, 'team'])->name('team');
+Route::get('/team-edit/{id}', [App\Http\Controllers\TeamController::class, 'teamedit'])->name('teamedit');
+Route::post('/update-team-post', [App\Http\Controllers\TeamController::class, 'updateteam'])->name('updateteam');
+Route::get('/team-delete/{id}', [App\Http\Controllers\TeamController::class, 'teamdelete'])->name('teamdelete');
+
+//Client Review
+Route::get('/add-review', [App\Http\Controllers\ClientReviewController::class, 'addreview'])->name('addreview');
+Route::post('/add-review-post', [App\Http\Controllers\ClientReviewController::class, 'addreviewpost'])->name('addreviewpost');
+Route::get('/review', [App\Http\Controllers\ClientReviewController::class, 'review'])->name('review');
+Route::get('/review-edit/{id}', [App\Http\Controllers\ClientReviewController::class, 'reviewedit'])->name('reviewedit');
+Route::post('/update-review-post', [App\Http\Controllers\ClientReviewController::class, 'updatereview'])->name('updatereview');
+Route::get('/review-delete/{id}', [App\Http\Controllers\ClientReviewController::class, 'reviewdelete'])->name('reviewdelete');

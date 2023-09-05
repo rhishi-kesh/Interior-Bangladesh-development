@@ -2,7 +2,7 @@
     <!-- Sidebar scroll-->
     <div>
       <div class="brand-logo d-flex align-items-center justify-content-between">
-        <a href="index-2.html" class="text-nowrap logo-img text-center pt-3">
+        <a href="{{ url('/home') }}" class="text-nowrap logo-img text-center pt-3">
           <img src="{{ url('backend/images/Logo/logo.png') }}" class="dark-logo" width="180" alt="" />
           <img src="{{ url('backend/images/Logo/logo.png') }}" class="light-logo" width="180" alt="" />
         </a>
@@ -112,6 +112,69 @@
                     <i class="ti ti-circle"></i>
                   </div>
                   <span class="hide-menu">View Service</span>
+                </a>
+              </li>
+            </ul>
+          </li>
+
+          <li class="sidebar-item">
+            <a class="sidebar-link has-arrow" href="#" aria-expanded="false">
+              <span class="d-flex">
+                <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-brand-asana" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                    <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+                    <path d="M12 7m-3 0a3 3 0 1 0 6 0a3 3 0 1 0 -6 0"></path>
+                    <path d="M17 16m-3 0a3 3 0 1 0 6 0a3 3 0 1 0 -6 0"></path>
+                    <path d="M7 16m-3 0a3 3 0 1 0 6 0a3 3 0 1 0 -6 0"></path>
+                 </svg>
+              </span>
+              <span class="hide-menu">Team</span>
+            </a>
+            <ul aria-expanded="false" class="collapse first-level">
+              <li class="sidebar-item">
+                <a href="{{ route('add-team') }}" class="sidebar-link">
+                  <div class="round-16 d-flex align-items-center justify-content-center">
+                    <i class="ti ti-circle"></i>
+                  </div>
+                  <span class="hide-menu">Add Member</span>
+                </a>
+              </li>
+              <li class="sidebar-item">
+                <a href="{{ route('team') }}" class="sidebar-link">
+                  <div class="round-16 d-flex align-items-center justify-content-center">
+                    <i class="ti ti-circle"></i>
+                  </div>
+                  <span class="hide-menu">View Team</span>
+                </a>
+              </li>
+            </ul>
+          </li>
+
+          <li class="sidebar-item">
+            <a class="sidebar-link has-arrow" href="#" aria-expanded="false">
+              <span class="d-flex">
+                <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-chess-king-filled" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                    <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+                    <path d="M12 2a1 1 0 0 1 .993 .883l.007 .117v2h2a1 1 0 0 1 .117 1.993l-.117 .007h-2v1.758a4.49 4.49 0 0 1 2.033 -.734l.24 -.018l.227 -.006a4.5 4.5 0 0 1 4.5 4.5a4.504 4.504 0 0 1 -4.064 4.478l-.217 .016l-.219 .006h-7a4.5 4.5 0 1 1 2.501 -8.241l-.001 -1.759h-2a1 1 0 0 1 -.117 -1.993l.117 -.007h2v-2a1 1 0 0 1 1 -1z" stroke-width="0" fill="currentColor"></path>
+                    <path d="M18 18h-12a1 1 0 0 0 -1 1a2 2 0 0 0 2 2h10a2 2 0 0 0 1.987 -1.768l.011 -.174a1 1 0 0 0 -.998 -1.058z" stroke-width="0" fill="currentColor"></path>
+                 </svg>
+              </span>
+              <span class="hide-menu">Client Review</span>
+            </a>
+            <ul aria-expanded="false" class="collapse first-level">
+              <li class="sidebar-item">
+                <a href="{{ route('addreview') }}" class="sidebar-link">
+                  <div class="round-16 d-flex align-items-center justify-content-center">
+                    <i class="ti ti-circle"></i>
+                  </div>
+                  <span class="hide-menu">Add Review</span>
+                </a>
+              </li>
+              <li class="sidebar-item">
+                <a href="{{ route('review') }}" class="sidebar-link">
+                  <div class="round-16 d-flex align-items-center justify-content-center">
+                    <i class="ti ti-circle"></i>
+                  </div>
+                  <span class="hide-menu">View Reviews</span>
                 </a>
               </li>
             </ul>
