@@ -46,61 +46,65 @@ class ClientReviewController extends Controller
                 'created_at' => Carbon::now()
             ]);
         }
-        return back()->with('success','Client Add Successfull');
+        return back()->with('success','Client Review Add Successfull');
     }
     function review(){
-        $reviews = ClientReview::simplepaginate('10');
+        $reviews = ClientReview::paginate('10');
         return view('backend.pages.review.review', compact('reviews'));
     }
     function reviewedit($id){
         $review = ClientReview::findOrFail($id);
         return view('backend.pages.review.review_edit', compact('review'));
     }
-    // function updateteam(Request $request){
-    //     $rules = [
-    //         'member_name'=>'required',
-    //         'team_image' => [
-    //         'image',
-    //         'mimes:jpg,png,jpeg',
-    //         'max:2048'],
-    //         'position'=>'required',
-    //     ];
-    //     $cm = [
-    //         'member_name.required'=>'Member Name feild is empty',
-    //         'team_image.image'=>'Please Choose An Image',
-    //         'team_image.mimes'=>'Image Formate should Be (png, jpg, jpeg)',
-    //         'team_image.max'=>"Image Can't Be Larger Then 2 MB",
-    //         'position.required'=>'Position feild is empty',
-    //     ];
-    //     $this->validate($request, $rules, $cm);
+    function updatereview(Request $request){
+        $rules = [
+            'client_name'=>'required',
+            'client_place'=>'required',
+            'client_photo' => [
+            'image',
+            'mimes:jpg,png,jpeg',
+            'max:2048'],
+            'client_speech'=>'required',
+        ];
+        $cm = [
+            'client_name.required'=>'Client Name feild is empty',
+            'client_place.required'=>'Client City feild is empty',
+            'client_speech.required'=>'Client Speech feild is empty',
+            'client_photo.image'=>'Please Choose An Image',
+            'client_photo.mimes'=>'Image Formate should Be (png, jpg, jpeg)',
+            'client_photo.max'=>"Image Can't Be Larger Then 2 MB",
+        ];
+        $this->validate($request, $rules, $cm);
 
-    //     $id = $request->id;
-    //     $team = Team::findOrFail($id);
+        $id = $request->id;
+        $Review = ClientReview::findOrFail($id);
 
-    //     $fileName = '';
+        $fileName = '';
 
-    //     if ($request->hasFile('team_image')) {
-    //         $fileName = time() . '.' . $request->team_image->getClientOriginalExtension();
-    //         unlink(public_path('images/team').'/'.$team->team_image);
-    //         $request->team_image->move(public_path('images/team'), $fileName);
-    //     } else {
-    //         $fileName = $team->team_image;
-    //     }
+        if ($request->hasFile('client_photo')) {
+            $fileName = time() . '.' . $request->client_photo->getClientOriginalExtension();
+            unlink(public_path('images/review').'/'.$Review->client_image);
+            $request->client_photo->move(public_path('images/review'), $fileName);
+        } else {
+            $fileName = $Review->client_image;
+        }
 
-    //     Team::where('id',$id)->update([
-    //         'member_name' => $request->member_name,
-    //         'position' => $request->position,
-    //         'team_image' => $fileName,
-    //         'created_at' => Carbon::now()
-    //     ]);
+        ClientReview::where('id',$id)->update([
+                'client_name' => $request->client_name,
+                'client_city' => $request->client_place,
+                'client_image' => $fileName,
+                'client_video_speech' => $request->video_speech,
+                'client_speech' => $request->client_speech,
+                'updated_at' => Carbon::now()
+        ]);
 
-    //     return redirect()->route('team')->with('success','Member Information Updated Successfull');
-    // }
-    // function teamdelete($id){
-    //     $team = Team::findOrFail($id);
-    //     unlink(public_path('images/team').'/'.$team->team_image);
-    //     Team::findOrFail($id)->delete();
+        return redirect()->route('review')->with('success','Client Review Updated Successfull');
+    }
+    function reviewdelete($id){
+        $Review = ClientReview::findOrFail($id);
+        unlink(public_path('images/review').'/'.$Review->client_image);
+        ClientReview::findOrFail($id)->delete();
 
-    //     return back()->with('delete','Slide Deleted Successfull');
-    // }
+        return back()->with('delete','Slide Deleted Successfull');
+    }
 }

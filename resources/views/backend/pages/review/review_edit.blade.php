@@ -10,10 +10,11 @@
             {{ Session::get('success') }}
         </div>
         @endif
-      <h4 class="mb-3">Edit Your Review</h4>
-      <form action="{{ route('addreviewpost') }}" method="post" enctype="multipart/form-data">
+      <h4 class="mb-3">Update Review</h4>
+      <form action="{{ route('updatereview') }}" method="post" enctype="multipart/form-data">
         @csrf
         <div class="row">
+            <input type="hidden" value="{{ $review->id }}" name="id">
           <div class="col-md-6 mb-3">
                 <label for="client_name" class="form-label">Client Name</label>
                 <input type="text" value="{{ $review->client_name }}" class="form-control form-control-lg rounded-1 @error('client_name') is-invalid @enderror" name="client_name" id="client_name" placeholder="Enter Client Name">
@@ -48,7 +49,7 @@
             </div>
             <div class="col-md-6 mb-3">
                 <label for="video_speech" class="form-label">Client Video Speech</label>
-                <input type="url" value="{{ $review->client_video_speech }}" class="form-control form-control-lg rounded-1 @error('video_speech') is-invalid @enderror" name="video_speech" id="video_speech" placeholder="Enter Valid Video Link | If Have">
+                <input type="url" value="{{ ($review->client_video_speech == '') ? '' : $review->client_video_speech }}" class="form-control form-control-lg rounded-1 @error('video_speech') is-invalid @enderror" name="video_speech" id="video_speech" placeholder="{{ ($review->client_video_speech == '') ? 'Video Url Not Provide' : $review->client_video_speech }}">
                 @error('video_speech')
                     <div class="alert alert-danger">{{ $message }}</div>
                 @enderror
@@ -62,7 +63,10 @@
         </div>
           <div class="col-12">
             <div class="d-md-flex align-items-center mt-3">
-              <div class="ms-auto mt-3 mt-md-0">
+                <div class="ms-auto mt-3 mt-md-0">
+                    <a href="{{ route('review') }}" class="btn btn-warning font-medium rounded-pill px-4">Back</a>
+                </div>
+              <div class="ms-0 ms-md-2 mt-3 mt-md-0">
                 <button type="submit" class="btn btn-info font-medium rounded-pill px-4">
                   <div class="d-flex align-items-center">
                     <i class="ti ti-send me-2 fs-4"></i>

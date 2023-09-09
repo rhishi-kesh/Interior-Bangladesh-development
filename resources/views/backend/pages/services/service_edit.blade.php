@@ -15,10 +15,17 @@
         @csrf
         <div class="row">
             <input type="hidden" name="id" value="{{ $service->id }}">
-          <div class="col-md-12 mb-3">
+            <div class="col-md-12 mb-3">
                 <label for="service_name" class="form-label">Service Name</label>
                 <input type="text" value="{{ $service->service_name }}" class="form-control form-control-lg rounded-1 @error('service_name') is-invalid @enderror" name="service_name" id="service_name" placeholder="Enter Service Name">
                 @error('service_name')
+                    <div class="alert alert-danger">{{ $message }}</div>
+                @enderror
+            </div>
+            <div class="col-md-12 mb-3">
+                <label for="service_subtitle" class="form-label">Service SubTitle</label>
+                <textarea name="service_subtitle" rows="5" class="ckeditor form-control @error('service_subtitle') is-invalid @enderror" id="service_subtitle" placeholder="Enter Service Title">{{ $service->service_subtitle }}</textarea>
+                @error('service_subtitle')
                     <div class="alert alert-danger">{{ $message }}</div>
                 @enderror
             </div>
@@ -40,24 +47,20 @@
                     </script>
                 @endsection
             </div>
-          <div class="col-md-12 mb-3">
-            <label for="service_subtitle" class="form-label">Service SubTitle</label>
-            <textarea name="service_subtitle" rows="5" class="ckeditor form-control @error('service_subtitle') is-invalid @enderror" id="service_subtitle" placeholder="Enter Service Title">{{ $service->service_subtitle }}</textarea>
-            @error('service_subtitle')
-                <div class="alert alert-danger">{{ $message }}</div>
-            @enderror
-        </div>
-          <div class="col-12">
-            <div class="d-md-flex align-items-center mt-3">
-              <div class="ms-auto mt-3 mt-md-0">
-                <button type="submit" class="btn btn-info font-medium rounded-pill px-4">
-                  <div class="d-flex align-items-center">
-                    <i class="ti ti-send me-2 fs-4"></i>
-                    Submit
-                  </div>
-                </button>
-              </div>
-            </div>
+            <div class="col-12">
+                <div class="d-md-flex align-items-center mt-3">
+                    <div class="ms-auto mt-3 mt-md-0">
+                        <a href="{{ route('services') }}" class="btn btn-warning font-medium rounded-pill px-4">Back</a>
+                    </div>
+                    <div class="ms-0 ms-md-2 mt-3 mt-md-0">
+                        <button type="submit" class="btn btn-info font-medium rounded-pill px-4">
+                            <div class="d-flex align-items-center">
+                                <i class="ti ti-send me-2 fs-4"></i>
+                                Submit
+                            </div>
+                        </button>
+                    </div>
+                </div>
           </div>
         </div>
       </form>

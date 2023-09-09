@@ -54,7 +54,7 @@ class SliderController extends Controller
         return back()->with('success','Slide Add Successfull');
     }
     function sliders(){
-        $slides = Slider::simplepaginate('10');
+        $slides = Slider::paginate('10');
         return view('backend.pages.sliders.slides', compact('slides'));
     }
     function slideedit($id){

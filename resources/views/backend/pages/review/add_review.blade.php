@@ -62,7 +62,10 @@
         </div>
           <div class="col-12">
             <div class="d-md-flex align-items-center mt-3">
-              <div class="ms-auto mt-3 mt-md-0">
+                <div class="ms-auto mt-3 mt-md-0">
+                    <input type="reset" class="btn btn-danger font-medium rounded-pill px-4" value="Reset Form">
+                </div>
+              <div class="ms-0 ms-md-2 mt-3 mt-md-0">
                 <button type="submit" class="btn btn-info font-medium rounded-pill px-4">
                   <div class="d-flex align-items-center">
                     <i class="ti ti-send me-2 fs-4"></i>

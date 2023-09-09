@@ -7,6 +7,7 @@ use App\Http\Controllers\AboutController;
 use App\Http\Controllers\ServiceController;
 use App\Http\Controllers\TeamController;
 use App\Http\Controllers\ClientReviewController;
+use App\Http\Controllers\ClientsController;
 
 /*
 |--------------------------------------------------------------------------
@@ -63,3 +64,19 @@ Route::get('/review', [App\Http\Controllers\ClientReviewController::class, 'revi
 Route::get('/review-edit/{id}', [App\Http\Controllers\ClientReviewController::class, 'reviewedit'])->name('reviewedit');
 Route::post('/update-review-post', [App\Http\Controllers\ClientReviewController::class, 'updatereview'])->name('updatereview');
 Route::get('/review-delete/{id}', [App\Http\Controllers\ClientReviewController::class, 'reviewdelete'])->name('reviewdelete');
+
+//Client Review
+Route::get('/add-client', [App\Http\Controllers\ClientsController::class, 'addclient'])->name('addclient');
+Route::post('/add-client-post', [App\Http\Controllers\ClientsController::class, 'addclientpost'])->name('addclientpost');
+Route::get('/client', [App\Http\Controllers\ClientsController::class, 'client'])->name('client');
+Route::get('/client-edit/{id}', [App\Http\Controllers\ClientsController::class, 'clientedit'])->name('clientedit');
+Route::post('/update-client-post', [App\Http\Controllers\ClientsController::class, 'clientreview'])->name('clientreview');
+Route::get('/client-delete/{id}', [App\Http\Controllers\ClientsController::class, 'clientdelete'])->name('clientdelete');
+
+//Gallery Category
+Route::get('/add-gallery_category', [App\Http\Controllers\Gallery_CategoryController::class, 'add_gallery_category'])->name('add_gallery_category');
+Route::post('/add-gallery_category-post', [App\Http\Controllers\Gallery_CategoryController::class, 'gallery_category_post'])->name('gallery_category_post');
+Route::get('/gallery_category', [App\Http\Controllers\Gallery_CategoryController::class, 'gallery_category'])->name('gallery_category');
+Route::get('/gallery_category-edit/{id}', [App\Http\Controllers\Gallery_CategoryController::class, 'gallery_categoryedit'])->name('gallery_categoryedit');
+Route::post('/update-gallery_category-post', [App\Http\Controllers\Gallery_CategoryController::class, 'gallery_categoryupdate'])->name('gallery_categoryupdate');
+Route::get('/gallery_category-delete/{id}', [App\Http\Controllers\Gallery_CategoryController::class, 'gallery_categorydelete'])->name('gallery_categorydelete');

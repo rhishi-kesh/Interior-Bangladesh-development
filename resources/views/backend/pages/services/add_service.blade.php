@@ -14,10 +14,17 @@
       <form action="{{ route('add-servicepost') }}" method="post" enctype="multipart/form-data">
         @csrf
         <div class="row">
-          <div class="col-md-12 mb-3">
+            <div class="col-md-12 mb-3">
                 <label for="service_name" class="form-label">Service Name</label>
                 <input type="text" value="{{ old('service_name') }}" class="form-control form-control-lg rounded-1 @error('service_name') is-invalid @enderror" name="service_name" id="service_name" placeholder="Enter Service Name">
                 @error('service_name')
+                    <div class="alert alert-danger">{{ $message }}</div>
+                @enderror
+            </div>
+            <div class="col-md-12 mb-3">
+                <label for="service_subtitle" class="form-label">Service SubTitle</label>
+                <textarea name="service_subtitle" rows="5" class="ckeditor form-control @error('service_subtitle') is-invalid @enderror" id="service_subtitle" placeholder="Enter Service Title">{{ old('service_subtitle') }}</textarea>
+                @error('service_subtitle')
                     <div class="alert alert-danger">{{ $message }}</div>
                 @enderror
             </div>
@@ -39,25 +46,21 @@
                     </script>
                 @endsection
             </div>
-          <div class="col-md-12 mb-3">
-            <label for="service_subtitle" class="form-label">Service SubTitle</label>
-            <textarea name="service_subtitle" rows="5" class="ckeditor form-control @error('service_subtitle') is-invalid @enderror" id="service_subtitle" placeholder="Enter Service Title">{{ old('service_subtitle') }}</textarea>
-            @error('service_subtitle')
-                <div class="alert alert-danger">{{ $message }}</div>
-            @enderror
-        </div>
-          <div class="col-12">
-            <div class="d-md-flex align-items-center mt-3">
-              <div class="ms-auto mt-3 mt-md-0">
-                <button type="submit" class="btn btn-info font-medium rounded-pill px-4">
-                  <div class="d-flex align-items-center">
-                    <i class="ti ti-send me-2 fs-4"></i>
-                    Submit
-                  </div>
-                </button>
-              </div>
+            <div class="col-12">
+                <div class="d-md-flex align-items-center mt-3">
+                    <div class="ms-auto mt-3 mt-md-0">
+                        <input type="reset" class="btn btn-danger font-medium rounded-pill px-4" value="Reset Form">
+                      </div>
+                    <div class="ms-0 ms-md-2 mt-3 mt-md-0">
+                    <button type="submit" class="btn btn-info font-medium rounded-pill px-4">
+                        <div class="d-flex align-items-center">
+                        <i class="ti ti-send me-2 fs-4"></i>
+                        Submit
+                        </div>
+                    </button>
+                    </div>
+                </div>
             </div>
-          </div>
         </div>
       </form>
     </div>

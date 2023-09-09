@@ -14,6 +14,7 @@
       <form action="{{ route('updateabout') }}" method="post" enctype="multipart/form-data">
         @csrf
         <div class="row">
+            <input type="hidden" value="{{ $about->id }}" name="id">
             <div class="col-md-12 mb-3">
                 <label for="why_choose_us" class="form-label">Why Choose Us</label>
                 <textarea class="form-control form-control-lg rounded-1 @error('why_choose_us') is-invalid @enderror" name="why_choose_us" id="why_choose_us" placeholder="Why Choose Us" rows="5">{{ $about->choose_us }}</textarea>
@@ -27,11 +28,11 @@
                 @error('choose_us_image')
                     <div class="alert alert-danger">{{ $message }}</div>
                 @enderror
-                <img id="choose_us_image_p" src="#" alt="Image Preview" style="max-width: 200px; max-height: 100px;" class="mt-3">
+                <img id="choose_us_image_p" src="{{ url('images/about/') }}/{{ $about->choose_us_image }}" alt="Image Preview" style="max-width: 200px; max-height: 100px;" class="mt-3">
             </div>
             <div class="col-md-12 mb-3">
                 <label for="mission" class="form-label">Our Mission</label>
-                <textarea class="form-control form-control-lg rounded-1 @error('mission') is-invalid @enderror" name="mission" id="mission" placeholder="Our Mission" rows="5">{{ old('mission') }}</textarea>
+                <textarea class="form-control form-control-lg rounded-1 @error('mission') is-invalid @enderror" name="mission" id="mission" placeholder="Our Mission" rows="5">{{ $about->mission }}</textarea>
                 @error('mission')
                     <div class="alert alert-danger">{{ $message }}</div>
                 @enderror
@@ -42,11 +43,11 @@
                 @error('mission_image')
                     <div class="alert alert-danger">{{ $message }}</div>
                 @enderror
-                <img id="mission_image_p" src="#" alt="Image Preview" style="max-width: 200px; max-height: 100px;" class="mt-3">
+                <img id="mission_image_p" src="{{ url('images/about/') }}/{{ $about->mission_image }}" alt="Image Preview" style="max-width: 200px; max-height: 100px;" class="mt-3">
             </div>
             <div class="col-md-12 mb-3">
                 <label for="vision" class="form-label">Our Vision</label>
-                <textarea  class="form-control form-control-lg rounded-1 @error('vision') is-invalid @enderror" name="vision" id="our_vision" placeholder="Our Vision" rows="5">{{ old('vision') }}</textarea>
+                <textarea  class="form-control form-control-lg rounded-1 @error('vision') is-invalid @enderror" name="vision" id="our_vision" placeholder="Our Vision" rows="5">{{ $about->vision }}</textarea>
                 @error('vision')
                     <div class="alert alert-danger">{{ $message }}</div>
                 @enderror
@@ -57,32 +58,32 @@
                 @error('our_vision_image')
                     <div class="alert alert-danger">{{ $message }}</div>
                 @enderror
-                <img id="our_vision_image_p" src="#" alt="Image Preview" style="max-width: 200px; max-height: 100px;" class="mt-3">
+                <img id="our_vision_image_p" src="{{ url('images/about/') }}/{{ $about->vision_image }}" alt="Image Preview" style="max-width: 200px; max-height: 100px;" class="mt-3">
             </div>
             <div class="col-md-6 mb-3">
                 <label for="project_c" class="form-label">Number Of Projects Completed</label>
-                <input type="text" value="" class="form-control form-control-lg rounded-1 @error('project_c') is-invalid @enderror" name="project_c" id="project_c" placeholder="Projects Completed">
+                <input type="text" value="{{ $about->project_completed }}" class="form-control form-control-lg rounded-1 @error('project_c') is-invalid @enderror" name="project_c" id="project_c" placeholder="Projects Completed">
                 @error('project_c')
                     <div class="alert alert-danger">{{ $message }}</div>
                 @enderror
             </div>
             <div class="col-md-6 mb-3">
                 <label for="ongoing_p" class="form-label">Number Of Ongoing Projects</label>
-                <input type="text" value="" class="form-control form-control-lg rounded-1 @error('ongoing_p') is-invalid @enderror" name="ongoing_p" id="ongoing_p" placeholder="Ongoing Projects">
+                <input type="text" value="{{ $about->ongogin_project }}" class="form-control form-control-lg rounded-1 @error('ongoing_p') is-invalid @enderror" name="ongoing_p" id="ongoing_p" placeholder="Ongoing Projects">
                 @error('ongoing_p')
                     <div class="alert alert-danger">{{ $message }}</div>
                 @enderror
             </div>
             <div class="col-md-6 mb-3">
                 <label for="employed" class="form-label">Number Of Work Employed</label>
-                <input type="text" value="" class="form-control form-control-lg rounded-1 @error('employed') is-invalid @enderror" name="employed" id="employed" placeholder="Work Employed">
+                <input type="text" value="{{ $about->employe }}" class="form-control form-control-lg rounded-1 @error('employed') is-invalid @enderror" name="employed" id="employed" placeholder="Work Employed">
                 @error('employed')
                     <div class="alert alert-danger">{{ $message }}</div>
                 @enderror
             </div>
             <div class="col-md-6 mb-3">
                 <label for="experiance" class="form-label">Number Of Years Experiance</label>
-                <input type="text" value="" class="form-control form-control-lg rounded-1 @error('experiance') is-invalid @enderror" name="experiance" id="experiance" placeholder="Years Experiance">
+                <input type="text" value="{{ $about->experiance }}" class="form-control form-control-lg rounded-1 @error('experiance') is-invalid @enderror" name="experiance" id="experiance" placeholder="Years Experiance">
                 @error('experiance')
                     <div class="alert alert-danger">{{ $message }}</div>
                 @enderror

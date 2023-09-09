@@ -46,7 +46,7 @@ class ServiceController extends Controller
         return back()->with('success','Service Add Successfull');
     }
     function services(){
-        $services = Service::simplepaginate('10');
+        $services = Service::paginate('10');
         return view('backend.pages.services.services', compact('services'));
     }
     function serviceedit($id){

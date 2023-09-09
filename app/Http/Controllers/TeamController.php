@@ -45,7 +45,7 @@ class TeamController extends Controller
         return back()->with('success','Member Add Successfull');
     }
     function team(){
-        $teams = Team::simplepaginate('10');
+        $teams = Team::paginate('10');
         return view('backend.pages.team.team', compact('teams'));
     }
     function teamedit($id){
