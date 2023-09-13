@@ -101,7 +101,7 @@ class SliderController extends Controller
             'btn_link' => $request->btn_link,
             'btn_text' => $request->btn_text,
             'background' => $fileName,
-            'created_at' => Carbon::now()
+            'updated_at' => Carbon::now()
         ]);
 
         return redirect()->route('sliders')->with('success','Slide Updated Successfull');

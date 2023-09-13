@@ -232,7 +232,7 @@
                 </a>
               </li>
               <li class="sidebar-item">
-                <a href="{{ route('client') }}" class="sidebar-link">
+                <a href="{{ route('addimage') }}" class="sidebar-link">
                   <div class="round-16 d-flex align-items-center justify-content-center">
                     <i class="ti ti-circle"></i>
                   </div>
@@ -240,7 +240,7 @@
                 </a>
               </li>
               <li class="sidebar-item">
-                <a href="{{ route('client') }}" class="sidebar-link">
+                <a href="{{ route('images') }}" class="sidebar-link">
                   <div class="round-16 d-flex align-items-center justify-content-center">
                     <i class="ti ti-circle"></i>
                   </div>
@@ -252,78 +252,30 @@
 
           <li class="sidebar-item">
             <a class="sidebar-link has-arrow" href="#" aria-expanded="false">
-              <span class="d-flex">
-                <i class="ti ti-user-plus"></i>
-              </span>
-              <span class="hide-menu">Register</span>
+                <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-article" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                    <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+                    <path d="M3 4m0 2a2 2 0 0 1 2 -2h14a2 2 0 0 1 2 2v12a2 2 0 0 1 -2 2h-14a2 2 0 0 1 -2 -2z"></path>
+                    <path d="M7 8h10"></path>
+                    <path d="M7 12h10"></path>
+                    <path d="M7 16h10"></path>
+                 </svg>
+              <span class="hide-menu">Blogs</span>
             </a>
             <ul aria-expanded="false" class="collapse first-level">
               <li class="sidebar-item">
-                <a href="authentication-register.html" class="sidebar-link">
+                <a href="{{ route('blog_content') }}" class="sidebar-link">
                   <div class="round-16 d-flex align-items-center justify-content-center">
                     <i class="ti ti-circle"></i>
                   </div>
-                  <span class="hide-menu">Side Register</span>
+                  <span class="hide-menu">Content Blog</span>
                 </a>
               </li>
               <li class="sidebar-item">
-                <a href="authentication-register2.html" class="sidebar-link">
+                <a href="{{ route('blog_video') }}" class="sidebar-link">
                   <div class="round-16 d-flex align-items-center justify-content-center">
                     <i class="ti ti-circle"></i>
                   </div>
-                  <span class="hide-menu">Boxed Register</span>
-                </a>
-              </li>
-            </ul>
-          </li>
-          <li class="sidebar-item">
-            <a class="sidebar-link has-arrow" href="#" aria-expanded="false">
-              <span class="d-flex">
-                <i class="ti ti-rotate"></i>
-              </span>
-              <span class="hide-menu">Forgot Password</span>
-            </a>
-            <ul aria-expanded="false" class="collapse first-level">
-              <li class="sidebar-item">
-                <a href="authentication-forgot-password.html" class="sidebar-link">
-                  <div class="round-16 d-flex align-items-center justify-content-center">
-                    <i class="ti ti-circle"></i>
-                  </div>
-                  <span class="hide-menu">Side Forgot Password</span>
-                </a>
-              </li>
-              <li class="sidebar-item">
-                <a href="authentication-forgot-password2.html" class="sidebar-link">
-                  <div class="round-16 d-flex align-items-center justify-content-center">
-                    <i class="ti ti-circle"></i>
-                  </div>
-                  <span class="hide-menu">Boxed Forgot Password</span>
-                </a>
-              </li>
-            </ul>
-          </li>
-          <li class="sidebar-item">
-            <a class="sidebar-link has-arrow" href="#" aria-expanded="false">
-              <span class="d-flex">
-                <i class="ti ti-zoom-code"></i>
-              </span>
-              <span class="hide-menu">Two Steps</span>
-            </a>
-            <ul aria-expanded="false" class="collapse first-level">
-              <li class="sidebar-item">
-                <a href="authentication-two-steps.html" class="sidebar-link">
-                  <div class="round-16 d-flex align-items-center justify-content-center">
-                    <i class="ti ti-circle"></i>
-                  </div>
-                  <span class="hide-menu">Side Two Steps</span>
-                </a>
-              </li>
-              <li class="sidebar-item">
-                <a href="authentication-two-steps2.html" class="sidebar-link">
-                  <div class="round-16 d-flex align-items-center justify-content-center">
-                    <i class="ti ti-circle"></i>
-                  </div>
-                  <span class="hide-menu">Boxed Two Steps</span>
+                  <span class="hide-menu">Video Blog</span>
                 </a>
               </li>
             </ul>

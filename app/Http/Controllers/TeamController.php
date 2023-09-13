@@ -87,7 +87,7 @@ class TeamController extends Controller
             'member_name' => $request->member_name,
             'position' => $request->position,
             'team_image' => $fileName,
-            'created_at' => Carbon::now()
+            'updated_at' => Carbon::now()
         ]);
 
         return redirect()->route('team')->with('success','Member Information Updated Successfull');

@@ -103,6 +103,4 @@
         });
     </script>
   </body>
-
-<!-- Mirrored from demos.adminmart.com/premium/bootstrap/modernize-bootstrap/package/html/main/ by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 30 Aug 2023 09:47:52 GMT -->
 </html>

@@ -88,7 +88,7 @@ class ServiceController extends Controller
             'service_name' => $request->service_name,
             'service_subtitle' => $request->service_subtitle,
             'service_image' => $fileName,
-            'created_at' => Carbon::now()
+            'updated_at' => Carbon::now()
         ]);
 
         return redirect()->route('services')->with('success','Service Updated Successfull');

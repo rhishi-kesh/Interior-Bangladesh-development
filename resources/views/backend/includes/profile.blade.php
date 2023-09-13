@@ -14,11 +14,11 @@
         <div class="d-flex align-items-center py-9 mx-7 border-bottom">
           <img src="../../dist/images/profile/user-1.jpg" class="rounded-circle" width="80" height="80" alt="" />
           <div class="ms-3">
-            <h5 class="mb-1 fs-3">Mathew Anderson</h5>
+            <h5 class="mb-1 fs-3">{{ Auth::user()->name }}</h5>
           </div>
         </div>
         <div class="message-body">
-          <a href="page-user-profile.html" class="py-10 mb-1 px-7 mt-8 d-flex align-items-center bg-light rounded-1 p-6">
+          <a href="page-user-profile.html" class="py-10 mb-1 px-7 mt-8 d-flex align-items-center justify-content-center bg-info text-white p-6">
             <span class="d-flex align-items-center justify-content-center">
                 <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-settings" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
                     <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
@@ -27,10 +27,10 @@
                  </svg>
             </span>
             <div class="d-inline-block v-middle ps-3">
-              <h6 class="mb-1 bg-hover-primary fw-semibold">Profile Settings</h6>
+              <h6 class="mb-1 bg-hover-dark text-white fw-semibold">Profile Settings</h6>
             </div>
           </a>
-          <a href="{{ route('logout') }}"  onclick="event.preventDefault(); document.getElementById('logout-form').submit();" class="py-8 px-7 mt-10 d-flex align-items-center justify-content-center text-center bg-light text-uppercase">
+          <a href="{{ route('logout') }}"  onclick="event.preventDefault(); document.getElementById('logout-form').submit();" class="py-8 px-7 mt-10 d-flex align-items-center justify-content-center text-center bg-info text-white text-uppercase">
             <span class="d-flex align-items-center justify-content-center">
                 <span>Logout</span>
             </span>

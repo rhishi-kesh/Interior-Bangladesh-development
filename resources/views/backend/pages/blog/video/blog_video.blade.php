@@ -4,16 +4,17 @@
 
 <div class="card">
     <div class="border-bottom title-part-padding d-flex justify-content-between">
-      <h4 class="card-title mb-0">Category</h4>
+      <h4 class="card-title mb-0">Blogs</h4>
       <div>
         <button type="button" class="justify-content-center w-100 btn mb-1 btn-primary d-flex align-items-center" data-bs-toggle="modal" data-bs-target="#samedata-modal" data-bs-whatever="@mdo">
-            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-folder-plus" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-pencil-plus" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
                 <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
-                <path d="M12 19h-7a2 2 0 0 1 -2 -2v-11a2 2 0 0 1 2 -2h4l3 3h7a2 2 0 0 1 2 2v3.5"></path>
+                <path d="M4 20h4l10.5 -10.5a2.828 2.828 0 1 0 -4 -4l-10.5 10.5v4"></path>
+                <path d="M13.5 6.5l4 4"></path>
                 <path d="M16 19h6"></path>
                 <path d="M19 16v6"></path>
              </svg>
-             <span class="ms-2">Add Category</span>
+             <span class="ms-2">Add Blog</span>
         </button>
       </div>
     </div>
@@ -35,17 +36,17 @@
         <thead>
           <tr>
             <th class="sorting sorting_asc" tabindex="0" aria-controls="editable-datatable" rowspan="1" colspan="1" style="width: 148.217px;" aria-sort="ascending">SL</th>
-            <th class="sorting" tabindex="0" aria-controls="editable-datatable" rowspan="1" colspan="1" style="width: 227.2px;">Category Name</th>
+            <th class="sorting" tabindex="0" aria-controls="editable-datatable" rowspan="1" colspan="1" style="width: 227.2px;">Blog Title</th>
             <th class="sorting" tabindex="0" aria-controls="editable-datatable" rowspan="1" colspan="1" style="width: 92.417px;">Action</th>
         </tr>
         </thead>
         <tbody>
-        @forelse ($categoris as $key => $categori)
+        @forelse ($contents as $key => $content)
             <tr id="7" class="gradeA odd">
-                <td tabindex="1" class="sorting_1">{{ $categoris->firstItem()+$key }}</td>
-                <td tabindex="1">{{ Str::limit($categori->category_name,100,'...') }}</td>
+                <td tabindex="1" class="sorting_1">{{ $contents->firstItem()+$key }}</td>
+                <td tabindex="1">{{ Str::limit($content->blog_title,100,'...') }}</td>
                 <td tabindex="1">
-                    <button class="btn waves-effect waves-light btn-success mt-2" data-bs-toggle="modal" data-bs-target="#Update{{ $categori->id }}">
+                    <a class="btn waves-effect waves-light btn-success mt-2" href="{{ route('blog_videoedit',$content->id) }}">
                         <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-edit-circle" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
                             <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
                             <path d="M12 15l8.385 -8.415a2.1 2.1 0 0 0 -2.97 -2.97l-8.415 8.385v3h3z"></path>
@@ -53,48 +54,13 @@
                             <path d="M9 7.07a7 7 0 0 0 1 13.93a7 7 0 0 0 6.929 -6"></path>
                         </svg>
                         Edit
-                    </button>
-                    <a class="btn waves-effect waves-light btn-danger mt-2" href="{{ route('gallery_categorydelete',$categori->id) }}" onclick="return confirm('Are you sure you want to delete?')">
+                    </a>
+                    <a class="btn waves-effect waves-light btn-danger mt-2" href="{{ route('blog_videodelete',$content->id) }}" onclick="return confirm('Are you sure you want to delete?')">
                         <i class="ti ti-trash fs-5"></i>
                         Delete
                     </a>
                 </td>
             </tr>
-            {{-- UPdate --}}
-            <div class="modal fade" id="Update{{ $categori->id }}">
-                <div class="modal-dialog" role="document">
-                    <div class="modal-content">
-                        <div class="modal-header d-flex align-items-center">
-                            <h4 class="modal-title" id="exampleModalLabel1">
-                            Update Category
-                            </h4>
-                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                        </div>
-                        <div class="modal-body">
-                            <form action="{{ route('gallery_categoryupdate') }}" method="POST">
-                                @csrf
-                                <input type="hidden" name="id" value="{{ $categori->id }}">
-                                <div class="mb-3">
-                                    <label for="category_name" class="control-label mb-1" >Category Name</label>
-                                    <input type="text" class="form-control @error('category_name') is-invalid @enderror" value="{{ $categori->category_name }}" placeholder="Enter Your Category Name" id="category_name" name="category_name"/>
-                                    @error('category_name')
-                                    <div class="alert alert-danger">{{ $message }}</div>
-                                @enderror
-                                </div>
-                                    <div class="modal-footer">
-                                        <button type="button" class="btn btn-light-danger text-danger font-medium" data-bs-dismiss="modal">
-                                            Close
-                                        </button>
-                                        <button type="submit" class="btn btn-success">
-                                            Submit
-                                        </button>
-                                    </div>
-                                </div>
-                            </form>
-                        </div>
-                    </div>
-                </div>
-            </div>
         @empty
             <tr>
                 <td colspan="20">No Data Found</td>
@@ -102,25 +68,48 @@
         @endforelse
         </tbody>
       </table>
-        {{ $categoris->links() }}
+        {{ $contents->links() }}
         <div class="modal fade" id="samedata-modal">
-            <div class="modal-dialog" role="document">
+            <div class="modal-dialog modal-lg" role="document">
                 <div class="modal-content">
                     <div class="modal-header d-flex align-items-center">
                         <h4 class="modal-title" id="exampleModalLabel1">
-                        Add Category
+                        Add Blog
                         </h4>
                         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                     </div>
                     <div class="modal-body">
-                        <form action="{{ route('gallery_category_post') }}" method="POST">
+                        <form action="{{ route('blog_video_post') }}" method="POST" enctype="multipart/form-data">
                             @csrf
                             <div class="mb-3">
-                                <label for="category_name" class="control-label mb-1" >Category Name</label>
-                                <input type="text" class="form-control @error('category_name') is-invalid @enderror" value="{{ old('category_name') }}" placeholder="Enter Your Category Name" id="category_name" name="category_name"/>
-                                @error('category_name')
-                                <div class="alert alert-danger">{{ $message }}</div>
-                            @enderror
+                                <label for="blog_title" class="control-label mb-1" >Blog Title</label>
+                                <input type="text" class="form-control @error('blog_title') is-invalid @enderror" value="{{ old('blog_title') }}" placeholder="Enter Your Title" id="blog_title" name="blog_title"/>
+                                @error('blog_title')
+                                    <div class="alert alert-danger">{{ $message }}</div>
+                                @enderror
+                            </div>
+                            <div class="mb-3">
+                                <label for="blog_subtitle" class="control-label mb-1" >Blog Subtitle</label>
+                                <textarea type="text" class="form-control @error('blog_subtitle') is-invalid @enderror" placeholder="Enter Your Subtitle" id="blog_subtitle" name="blog_subtitle">{{ old('blog_subtitle') }}</textarea>
+                                @error('blog_subtitle')
+                                    <div class="alert alert-danger">{{ $message }}</div>
+                                @enderror
+                            </div>
+                                @section('jss')
+                                    <script>
+                                        ClassicEditor
+                                            .create( document.querySelector( '#blog_subtitle' ) )
+                                            .catch( error => {
+                                                console.error( error );
+                                            } );
+                                    </script>
+                                @endsection
+                            <div class="col-md-12 mb-3">
+                                <label for="video_link" class="form-label">Video Link</label>
+                                <input type="text" class="form-control @error('video_link') is-invalid @enderror" value="{{ old('video_link') }}" placeholder="Enter Your Link" id="video_link" name="video_link"/>
+                                @error('video_link')
+                                    <div class="alert alert-danger">{{ $message }}</div>
+                                @enderror
                             </div>
                             </div>
                                 <div class="modal-footer">

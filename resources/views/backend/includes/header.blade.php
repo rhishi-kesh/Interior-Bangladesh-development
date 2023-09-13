@@ -28,7 +28,7 @@
           </a>
           <ul class="navbar-nav flex-row ms-auto align-items-center justify-content-center">
               {{-- notification-start --}}
-              @include('backend.includes.notification')
+              {{-- @include('backend.includes.notification') --}}
               {{-- notification-end --}}
               {{-- profile-start --}}
               @include('backend.includes.profile')

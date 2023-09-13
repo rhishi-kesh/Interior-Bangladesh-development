@@ -10,27 +10,38 @@
             {{ Session::get('success') }}
         </div>
         @endif
-      <h4 class="mb-3">Add Client Logo</h4>
-      <form action="{{ route('addclientpost') }}" method="post" enctype="multipart/form-data">
+      <h4 class="mb-3">Add Our Gallery Image</h4>
+      <form action="{{ route('addimagepost') }}" method="post" enctype="multipart/form-data">
         @csrf
         <div class="row">
             <div class="col-md-12 mb-3">
-                <label for="client_logo" class="form-label">Client Logo</label>
-                <input class="form-control form-control-lg rounded-1  @error('client_logo') is-invalid @enderror" type="file" id="client_logo" name="client_logo">
-                @error('client_logo')
+                <label for="gallery_image" class="form-label">Image</label>
+                <input class="form-control form-control-lg rounded-1  @error('gallery_image') is-invalid @enderror" type="file" id="gallery_image" name="gallery_image">
+                @error('gallery_image')
                     <div class="alert alert-danger">{{ $message }}</div>
                 @enderror
-                <img id="client_logo_p" src="#" alt="Image Preview" style="max-width: 200px; max-height: 100px;" class="mt-3">
+                <img id="gallery_image_p" src="#" alt="Image Preview" style="max-width: 200px; max-height: 100px;" class="mt-3">
                 @section('jss')
                     <script>
-                        client_logo.onchange = evt => {
-                        const [file] = client_logo.files
+                        gallery_image.onchange = evt => {
+                        const [file] = gallery_image.files
                         if (file) {
-                            client_logo_p.src = URL.createObjectURL(file)
+                            gallery_image_p.src = URL.createObjectURL(file)
                         }
                     }
                     </script>
                 @endsection
+            </div>
+            <div class="col-md-12 mb-3">
+                <select name="gallery_categorys" id="gallery_categorys" class="form-control form-control-lg rounded-1  @error('gallery_categorys') is-invalid @enderror">
+                    <option value="">Select Category</option>
+                    @foreach ($gallery_categorys as $gallery_category)
+                        <option value="{{ $gallery_category->id }}">{{ $gallery_category->category_name }}</option>
+                    @endforeach
+                </select>
+                @error('gallery_categorys')
+                    <div class="alert alert-danger">{{ $message }}</div>
+                @enderror
             </div>
             <div class="col-12">
                 <div class="d-md-flex align-items-center mt-3">

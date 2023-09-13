@@ -45,6 +45,13 @@
                         }
                     }
                     </script>
+                    <script>
+                        ClassicEditor
+                            .create( document.querySelector( '#service_subtitle' ) )
+                            .catch( error => {
+                                console.error( error );
+                            } );
+                    </script>
                 @endsection
             </div>
             <div class="col-12">
