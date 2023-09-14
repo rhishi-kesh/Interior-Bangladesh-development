@@ -285,7 +285,9 @@
                 <div class="container">
                     <div class="row justify-content-center">
                         <div class="col-12 col-md-8">
-                            <h2 class="title mb-0">Our Gallery</h2>
+                            <div class="title-header">
+                                <h2 class="title mb-0 text-uppercase">Our Gallery</h2>
+                            </div>
                             <p>Lorem, ipsum dolor sit, amet consectetur adipisicing elit. Quod itaque laudantium, nihil et mollitia non. Necessitatibus, itaque!</p>
                         </div>
                     </div>
@@ -527,7 +529,10 @@
             download: false,
             plugins: [lgThumbnail],
             loop: false,
-            thumbnail: true
+            thumbnail: true,
+            mobileSettings: {
+              close: true
+            }
         });
     </script>
     <script type="text/javascript">

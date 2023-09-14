@@ -381,7 +381,7 @@ $(".portfolio-slide").owlCarousel({
     smartSpeed: 3000,
     responsive:{
         0:{
-            items:1,
+            items:2,
             dots: true,
         },
         575:{
@@ -399,7 +399,7 @@ $(".portfolio-slide").owlCarousel({
             dots: true,
         },
         1000:{
-           items: $('.portfolio-slide').data('item')
+           items: 4
         }
     }    
 });

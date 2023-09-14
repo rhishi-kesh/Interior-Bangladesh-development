@@ -795,7 +795,6 @@
     -o-transform: translateX(-50%) translateY(-50%);
     transform: translateX(-50%) translateY(-50%);
 }
-.ttm-fid-view-lefticon.inside h4 { padding-left: 55px; }
 .ttm-fid-view-righticon .ttm-fid-contents, .ttm-fid-view-lefticon .ttm-fid-contents {
     padding-top: 12px;
     text-align: left;
@@ -1136,7 +1135,7 @@ body{ counter-reset: section; }
     -moz-box-shadow: 0 0 25px 0 rgba(41,61,88,.06);
     box-shadow: 0 0 25px 0 rgba(41,61,88,.06);
 }
-.featured-imagebox-team .featured-content.featured-content-team .featured-title { padding-top: 26px; }
+.featured-imagebox-team .featured-content.featured-content-team .featured-title { padding-bottom: 10px; padding-top: 10px; }
 .featured-imagebox-team .featured-content.featured-content-team .featured-title h5{   
     font-size: 19px;
     line-height: 23px;
@@ -1166,7 +1165,7 @@ body{ counter-reset: section; }
     position: relative;
     z-index: 2;
     position: relative;
-    margin-top: -40px;
+    margin-top: -23px;
     transform: translateY(40px);
     padding-bottom: 6px;
     -webkit-transition: all 0.3s ease-in-out;
