@@ -2,7 +2,8 @@
 <html lang="en">
 <head>
     <!--  Title -->
-    <title>Mordenize</title>
+    <link rel="icon" href="{{ url('/frontend/images/fav.png') }}">
+    <title>Interior Bangladesh | DashBoard</title>
     <!--  Required Meta Tag -->
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
@@ -68,10 +69,6 @@
                       <input type="password" class="form-control" name="password_confirmation" required autocomplete="new-password" id="Cpassword">
                     </div>
                     <button type="submit" class="btn btn-primary w-100 py-8 mb-4 rounded-2">Register</button>
-                    <div class="d-flex align-items-center">
-                      <p class="fs-4 mb-0 text-dark">Already have an Account?</p>
-                      <a class="text-primary fw-medium ms-2" href="{{ route('login') }}">Sign In</a>
-                    </div>
                   </form>
                 </div>
               </div>

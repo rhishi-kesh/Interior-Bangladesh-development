@@ -2,7 +2,7 @@
     <a class="nav-link pe-0" href="javascript:void(0)" id="drop1" data-bs-toggle="dropdown" aria-expanded="false">
       <div class="d-flex align-items-center">
         <div class="user-profile-img">
-          <img src="../../dist/images/profile/user-1.jpg" class="rounded-circle" width="35" height="35" alt="" />
+          <img style="object-fit: cover" src="{{ empty(Auth::user()->profile) ? url('images/profile/new/profile.jpg') : url('images/profile/'). '/' .Auth::user()->profile }}" class="rounded-circle" width="35" height="35" alt="" />
         </div>
       </div>
     </a>
@@ -11,14 +11,14 @@
         <div class="py-3 px-7 pb-0">
           <h5 class="mb-0 fs-5 fw-semibold">User Profile</h5>
         </div>
-        <div class="d-flex align-items-center py-9 mx-7 border-bottom">
-          <img src="../../dist/images/profile/user-1.jpg" class="rounded-circle" width="80" height="80" alt="" />
+        <div class="d-flex align-items-center py-9 mx-7">
+          <img style="object-fit: cover" src="{{ empty(Auth::user()->profile) ? url('images/profile/new/profile.jpg') : url('images/profile/'). '/' .Auth::user()->profile }}" class="rounded-circle" width="80" height="80" alt="" />
           <div class="ms-3">
             <h5 class="mb-1 fs-3">{{ Auth::user()->name }}</h5>
           </div>
         </div>
         <div class="message-body">
-          <a href="page-user-profile.html" class="py-10 mb-1 px-7 mt-8 d-flex align-items-center justify-content-center bg-info text-white p-6">
+          <a href="{{ route('edit_profile') }}" class="py-10 mb-1 px-7 mt-8 d-flex align-items-center justify-content-center bg-info text-white p-6">
             <span class="d-flex align-items-center justify-content-center">
                 <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-settings" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
                     <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>

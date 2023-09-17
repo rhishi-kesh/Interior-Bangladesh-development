@@ -36,10 +36,14 @@ class BlogContentController extends Controller
             $filename = time() . '.' . $image->getClientOriginalExtension();
             $request->blog_image->move(public_path('images/blog/content'), $filename);
 
+            $title = $request->blog_title;
+            $slug = str_replace(' ', '-', $title);
+
             BlogContent::insert([
                 'blog_title' => $request->blog_title,
                 'blog_subtitle' => $request->blog_subtitle,
                 'blog_image' => $filename,
+                'slug' => $slug,
                 'created_at' => Carbon::now()
             ]);
         }

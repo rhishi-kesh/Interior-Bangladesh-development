@@ -26,10 +26,14 @@ class BlogVideoController extends Controller
 
         $this->validate($request, $rules, $cm);
 
+        $title = $request->blog_title;
+        $slug = str_replace(' ', '-', $title);
+
         BlogVideo::insert([
             'blog_title' => $request->blog_title,
             'blog_subtitle' => $request->blog_subtitle,
             'video_link' => $request->video_link,
+            'slug' => $slug,
             'created_at' => Carbon::now()
         ]);
 

@@ -4,7 +4,8 @@
 <!-- Mirrored from demos.adminmart.com/premium/bootstrap/modernize-bootstrap/package/html/main/authentication-login2.html by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 30 Aug 2023 09:50:40 GMT -->
 <head>
     <!--  Title -->
-    <title>Mordenize</title>
+    <link rel="icon" href="{{ url('/frontend/images/fav.png') }}">
+    <title>Interior Bangladesh | DashBoard</title>
     <!--  Required Meta Tag -->
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
@@ -68,17 +69,17 @@
                         </label>
                       </div>
 
-                    @if (Route::has('password.request'))
+                    {{-- @if (Route::has('password.request'))
 
                         <a class="text-primary fw-medium" href="{{ route('password.request') }}">Forgot Password ?</a>
 
-                    @endif
+                    @endif --}}
                     </div>
                     <button type="submit" class="btn btn-primary w-100 py-8 mb-4 rounded-2">Login</button>
-                    <div class="d-flex align-items-center justify-content-center">
+                    {{-- <div class="d-flex align-items-center justify-content-center">
                       <p class="fs-4 mb-0 fw-medium">Don't have an account?</p>
                       <a class="text-primary fw-medium ms-2" href="{{ route('register') }}">Create an account</a>
-                    </div>
+                    </div> --}}
                   </form>
                 </div>
               </div>

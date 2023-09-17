@@ -2,7 +2,8 @@
 <html lang="en">
 <head>
     <!--  Title -->
-    <title>Mordenize</title>
+    <link rel="icon" href="{{ url('/frontend/images/fav.png') }}">
+    <title>Interior Bangladesh | DashBoard</title>
     <!--  Required Meta Tag -->
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
@@ -63,7 +64,7 @@
 
 
     <!--  Search Bar Start-->
-    @include('backend.includes.search_bar')
+    {{-- @include('backend.includes.search_bar') --}}
     <!--  Search Bar end-->
     <!--  Customizer start -->
     @include('backend.includes.customizer')

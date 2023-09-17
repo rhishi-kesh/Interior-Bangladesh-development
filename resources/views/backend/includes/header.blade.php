@@ -6,11 +6,6 @@
             <i class="ti ti-menu-2"></i>
           </a>
         </li>
-        <li class="nav-item d-none d-lg-block">
-          <a class="nav-link nav-icon-hover" href="javascript:void(0)" data-bs-toggle="modal" data-bs-target="#exampleModal">
-            <i class="ti ti-search"></i>
-          </a>
-        </li>
       </ul>
       <div class="d-block d-lg-none">
         <img src="{{ url('backend/images/Logo/logo.png') }}" class="dark-logo" width="120" alt="" />
@@ -27,9 +22,9 @@
             <i class="ti ti-align-justified fs-7"></i>
           </a>
           <ul class="navbar-nav flex-row ms-auto align-items-center justify-content-center">
-              {{-- notification-start --}}
-              {{-- @include('backend.includes.notification') --}}
-              {{-- notification-end --}}
+            <li>
+                <a href="{{ route('register') }}" class="btn btn-success mt-2 me-3">Add New User</a>
+            </li>
               {{-- profile-start --}}
               @include('backend.includes.profile')
               {{-- profile-end --}}

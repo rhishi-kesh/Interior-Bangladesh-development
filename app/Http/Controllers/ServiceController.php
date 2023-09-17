@@ -36,9 +36,13 @@ class ServiceController extends Controller
             $filename = time() . '.' . $image->getClientOriginalExtension();
             $request->service_image->move(public_path('images/service'), $filename);
 
+            $title = $request->service_name;
+            $slug = str_replace(' ', '-', $title);
+
             Service::insert([
                 'service_name' => $request->service_name,
                 'service_subtitle' => $request->service_subtitle,
+                'slug' => $slug,
                 'service_image' => $filename,
                 'created_at' => Carbon::now()
             ]);

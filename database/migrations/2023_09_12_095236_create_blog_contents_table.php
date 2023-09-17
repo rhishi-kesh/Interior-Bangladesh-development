@@ -16,6 +16,7 @@ return new class extends Migration
             $table->string('blog_image');
             $table->string('blog_title');
             $table->string('blog_subtitle');
+            $table->string('slug');
             $table->timestamps();
             $table->softDeletes();
         });

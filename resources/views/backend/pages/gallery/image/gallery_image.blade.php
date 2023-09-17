@@ -36,7 +36,7 @@
                     <img src="{{ url('images/gallery/') }}/{{ $gallery_image->gallery_image }}" alt="" style="max-width: 150px; max-height: 80px;">
                 </td>
                 <td>
-                    {{ $gallery_image->gallery_category_name->category_name }}
+                    {{ !empty($gallery_image->gallery_category_name->category_name) ? $gallery_image->gallery_category_name->category_name : 'N/A' }}
                 </td>
                 <td tabindex="1">
                     <a class="btn waves-effect waves-light btn-success mt-2" href="{{ route('imageedit',$gallery_image->id ) }}">
