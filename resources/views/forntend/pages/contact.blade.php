@@ -12,7 +12,7 @@
                         </div>
                         <div class="breadcrumb-wrapper">
                             <span>
-                                <a href="index.html"><i class="ti ti-home"></i></a>
+                                <a href="{{ route('main') }}"><i class="ti ti-home"></i></a>
                             </span>
                             <span class="ttm-bread-sep">&nbsp; / &nbsp;</span>
                             <span class="page-title"><span>Contact</span></span>
@@ -28,16 +28,31 @@
     <div class="site-main">
         <section class="contact py-5">
             <div class="container">
+                @if(Session::has('success'))
+                    <div class="alert alert-contact alert-success border-0 fade show" role="alert">
+                        <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                        <strong>{{ Session::get('success') }}</strong>
+                    </div>
+                @endif
+                @section('jss')
+                    <script>
+                        window.setTimeout(function() {
+                            $(".alert-contact").fadeTo(500, 0).slideUp(500, function(){
+                                $(this).remove();
+                            });
+                        }, 4000);
+                    </script>
+                @endsection
                 <div class="row justify-content-center">
                     <div class="col-12 col-md-8 text-center">
                         <h2 class="text-uppercase title">Get Touch with Us</h2>
-                        <p class="title-desc">If you would like to get in contact with the Interior, you have a number of options you can call or mail to below option, our team will support you as soon as possible.</p>
+                        <p class="title-desc">আমরা সবসময় আপনার প্রশ্নের উত্তর দিতে এবং আপনার ফিডব্যাক শুনতে প্রস্তুত।আপনি ফোন, ইমেল বা সোশ্যাল মিডিয়ার মাধ্যমে আমাদের সাথে যোগাযোগ করতে পারেন।ইন্টেরিয়র বাংলাদেশকে বেছে নেয়ার জন্য আপনাকে ধন্যবাদ!</p>
                     </div>
                 </div>
                 <div class="row">
                     <div class="col-12 col-lg-6 mt-4">
                         <div class="img-holder">
-                            <img src="assets/images/slides/slide-2.jpg" alt="contact_img" class="img-fluid">
+                            <img src="{{ url('frontend/images/contact.JPG') }}" alt="contact_img" class="img-fluid">
                         </div>
                         <div class="contact-info">
                             <div class="row mt-3">
@@ -106,12 +121,24 @@
                     </div>
                     <div class="col-12 col-lg-6 mt-4">
                         <div class="contact-form-v1">
-                            <form id="contact-form" name="contact_form" action="" method="post" novalidate="novalidate">
-                                <input type="text" name="form_name" value="" placeholder="Your Name*" class="" required="" aria-required="true">
-                                <input type="email" name="form_email" value="" placeholder="Your E-mail*" class="mt-4" required="" aria-required="true">
-                                <input type="text" name="form_phone" class="mt-4" value="" placeholder="Phone">
-                                <textarea name="form_message" class="mt-4" placeholder="Your Message.." required="" aria-required="true" rows="6"></textarea>
-                                <input id="form_botcheck" name="form_botcheck" type="hidden" value="">
+                            <form action="{{ route('contact_page_send') }}" method="POST">
+                                @csrf
+                                <input type="text" name="name" value="{{ old('name') }}" placeholder="Your Name*" class="@error('name') is-invalid @enderror" required>
+                                @error('name')
+                                    <div class="alert alert-danger">{{ $message }}</div>
+                                @enderror
+                                <input type="email" name="email" value="{{ old('email') }}" placeholder="Your E-mail*" class="mt-4 @error('email') is-invalid @enderror" required>
+                                @error('email')
+                                    <div class="alert alert-danger">{{ $message }}</div>
+                                @enderror
+                                <input type="number" name="phone" class="mt-4 @error('phone') is-invalid @enderror" value="{{ old('phone') }}" placeholder="Phone">
+                                @error('phone')
+                                    <div class="alert alert-danger">{{ $message }}</div>
+                                @enderror
+                                <textarea name="message" class="mt-4 @error('message') is-invalid @enderror" placeholder="Your Message.." required rows="6">{{ old('message') }}</textarea>
+                                @error('message')
+                                    <div class="alert alert-danger">{{ $message }}</div>
+                                @enderror
                                 <button class="ttm-btn ttm-btn-size-sm ttm-btn-shape-square ttm-icon-btn-right ttm-btn-style-fill ttm-btn-bgcolor-skincolor" type="submit">
                                     <span>send message</span>
                                     <i class="ti ti-angle-double-right"></i>

@@ -18,12 +18,20 @@
       </button>
       <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
         <div class="d-flex align-items-center justify-content-between">
-          <a href="javascript:void(0)" class="nav-link d-flex d-lg-none align-items-center justify-content-center" type="button" data-bs-toggle="offcanvas" data-bs-target="#mobilenavbar" aria-controls="offcanvasWithBothOptions">
-            <i class="ti ti-align-justified fs-7"></i>
-          </a>
-          <ul class="navbar-nav flex-row ms-auto align-items-center justify-content-center">
+          <ul class="navbar-nav flex-row align-items-center justify-content-between w-100">
             <li>
-                <a href="{{ route('register') }}" class="btn btn-success mt-2 me-3">Add New User</a>
+                @if (Auth::user()->role == 0)
+                <a href="{{ route('register_user') }}" class="btn btn-info mt-2 me-3 d-flex align-items-center">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-user-plus" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                        <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+                        <path d="M8 7a4 4 0 1 0 8 0a4 4 0 0 0 -8 0"></path>
+                        <path d="M16 19h6"></path>
+                        <path d="M19 16v6"></path>
+                        <path d="M6 21v-2a4 4 0 0 1 4 -4h4"></path>
+                     </svg>
+                    <span class="ms-2">Add New User</span>
+                </a>
+                @endif
             </li>
               {{-- profile-start --}}
               @include('backend.includes.profile')

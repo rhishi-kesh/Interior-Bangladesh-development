@@ -51,7 +51,7 @@
                     @foreach ($categorys as $category2)
                         @foreach (App\Models\GalleryImage::where('gallery_category_id', $category2->id)->get() as $gallery_img)
                             <div class="col-md-4 mt-4 item item{{ $category2->id }}" data-sub-html="<h3 class='text-uppercase text-white mb-0'>{{ $category2->category_name }}</h3>" data-src="{{ url('images/gallery') }}/{{ $gallery_img->gallery_image }}">
-                                <img src="{{ url('images/gallery').'/'.$gallery_img->gallery_image }}" alt="img" class="img-fluid rounded" style="max-height: 400px; max-width: 100%;">
+                                <img src="{{ url('images/gallery').'/'.$gallery_img->gallery_image }}" alt="img" class="img-fluid rounded" style="width: 100%; height: 300px; object-fit: cover; object-position: center center;">
                             </div>
                         @endforeach
                     @endforeach

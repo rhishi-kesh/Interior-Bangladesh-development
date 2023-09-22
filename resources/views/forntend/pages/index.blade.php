@@ -48,7 +48,7 @@
                                   <div class="ttm-fid-left">
                                       <h4 class="ttm-fid-inner">
                                           <i class="ti ti-briefcase"></i>
-                                          <span class="counter">{{ $about->project_completed }}</span><span>+</span>
+                                          <span class="counter">{{ $about->project_completed }} </span><span>+</span>
                                       </h4>
                                   </div>
                                   <div class="ttm-fid-contents">
@@ -62,7 +62,7 @@
                                   <div class="ttm-fid-left">
                                       <h4 class="ttm-fid-inner">
                                           <i class="ti ti-user"></i>
-                                          <span class="counter">{{ $about->employe }}</span><span>+</span>
+                                          <span class="counter">{{ $about->employe }} </span><span>+</span>
                                       </h4>
                                   </div>
                                   <div class="ttm-fid-contents">
@@ -76,7 +76,7 @@
                                   <div class="ttm-fid-left">
                                       <h4 class="ttm-fid-inner">
                                           <i class="ti ti-cup"></i>
-                                          <span class="counter">{{ $about->experiance }}</span><span>+</span>
+                                          <span class="counter">{{ $about->experiance }} </span><span>+</span>
                                       </h4>
                                   </div>
                                   <div class="ttm-fid-contents">
@@ -109,7 +109,7 @@
                           <div class="title-header">
                               <h2 class="title text-white">OUR SERVICE</h2>
                           </div>
-                          <div class="title-desc mb-40 text-white">Lorem ipsum dolor sit amet consectetur adipisicing elit. Odit, accusantium id. Rem unde vel ut eaque pariatur?</div>
+                          <div class="title-desc mb-40 text-white">আপনার চাহিদা এবং বাজেট অনুযায়ী আপনার পরিসরের সৌন্দর্য ও নান্দনিকতা আনয়নে আমাদের ইন্টেরিয়র বাংলাদেশ।</div>
                       </div><!-- section title end -->
                   </div>
                   <div class="col-md-2"></div>
@@ -119,7 +119,7 @@
                     <div class="col-12 col-md-6 col-lg-4 col-sm-4 mt-2">
                       <div class="service-item">
                           <div class="service-img">
-                              <img src="{{ url('images/service') }}/{{ $service->service_image }}" alt="img1" class="img-fluid">
+                              <img src="{{ url('images/service') }}/{{ $service->service_image }}" alt="img1" class="img-fluid" style="width: 100%; height: 300px; object-fit: cover; object-position: center center;">
                           </div>
                           <div class="service-details text-center">
                               <h3>
@@ -153,9 +153,9 @@
                       <!-- section title -->
                       <div class="section-title with-desc title-style-center_text clearfix">
                           <div class="title-header">
-                              <h2 class="title">OUR PRESTIGIOUS CLIENTS</h2>
+                              <h2 class="title">OUR HONOURABLE CLIENTS</h2>
                           </div>
-                          <div class="title-desc mb-40">We have been working with various clients, catering to their diverse needs. Our portfolio will show you the range of our services.</div>
+                          <div class="title-desc mb-40">আমরা ক্লায়েন্টদের মতামতের ভিত্তিতে এবং তাদের প্রয়োজন অনুযায়ী  ডিজাইন ও কার্যকারিতার সমন্বয়ে পরিসেবা প্রদান করে থাকি।</div>
                       </div><!-- section title end -->
                   </div>
                   <div class="col-md-2"></div>
@@ -168,7 +168,7 @@
                         @forelse ($clients as $client)
                             <div class="featured-imagebox featured-imagebox-portfolio">
                                 <div class="text-center">
-                                    <img class="img-fluid" src="{{ url('images/client') }}/{{ $client->client_logo }}" alt="image">
+                                    <img class="img-fluid" src="{{ url('images/client') }}/{{ $client->client_logo }}" alt="image" >
                                 </div>
                             </div>
                         @empty
@@ -186,10 +186,12 @@
           <div class="container">
               <div class="row justify-content-center text-center">
                   <div class="col-12 col-md-8">
-                      <div class="section-title clearfix">
-                          <h2 class="title text-center text-uppercase">Team Member</h2>
-                          <p class="title-desc">Lorem ipsum dolor sit amet consectetur adipisicing elit. Minus quidem, perspiciatis voluptatum nobis laudantium quae!</p>
-                      </div>
+                        <div class="section-title with-desc title-style-center_text clearfix">
+                            <div class="title-header">
+                                <h2 class="title text-center text-uppercase mt-4 mt-md-0">Team Member</h2>
+                            </div>
+                            <p class="title-desc">ইন্টেরিয়র বাংলাদেশ  হল পরিশ্রমী, কল্পনাপ্রসূত, উদ্ভাবনী চিন্তাবিদদের একটি দল যারা তাদের মেধা ও শ্রম দিয়ে সকলের স্বপ্ন পূরণের জন্য সর্বদা কাজ করে যাচ্ছে</p>
+                        </div>
                   </div>
               </div>
               <!-- row -->
@@ -199,7 +201,7 @@
                         <!-- featured-imagebox-team -->
                         <div class="featured-imagebox featured-imagebox-team ttm-team-box-view-overlay">
                             <div class="featured-thumbnail">
-                                <img class="img-fluid" src="{{ url('images/team') }}/{{ $team->team_image }}" alt="image" style="max-height: 400px; max-width: 360px">
+                                <img class="img-fluid" src="{{ url('images/team') }}/{{ $team->team_image }}" alt="image" style="width: 100%; height: 350px; object-fit: cover; object-position: center center;">
                             </div>
                             <div class="featured-content featured-content-team">
                                 <div class="featured-title">
@@ -235,7 +237,7 @@
                           <div class="title-header">
                               <h2 class="title text-uppercase">Our Working Process</h2>
                           </div>
-                          <div class="title-desc">Raising a heavy fur muff that covered the whole of her lower arm towards the viewer regor then turned to look out the window</div>
+                          <div class="title-desc">আপনি শুধু আপনার ধারনা আমাদের সাথে শেয়ার করুন এবং আমরা নিশ্চিত করব যে আপনার ধারনা এবং আমাদের ডিজাইন মিলে একটি সেরা প্রজেক্টে রুপ নিবে যা ইন্টেরিয়র বাংলাদেশ দ্বারা সম্পাদন করা হবে।  স্বপ্ন আপনার বাস্তবায়নের দায়িত্ব আমাদের। </div>
                       </div>
                   </div>
                   <div class="col-md-2"></div>
@@ -247,7 +249,7 @@
                              01
                          </div>
                          <h4 class="card-title">Idea & Design</h4>
-                         <p>With righteous indignation and works off beguiled demoralized charm.</p>
+                         <p>এই ধাপে আমরা ক্লাইন্ট এর সাথে প্রথমবার মিটিং করি এবং তাদের আইডিয়া, তাদের চাহিদা সম্পর্কে বিস্তারিত জানি বা জানার চেষ্টা করি। </p>
                          <i class="fa fa-handshake-o" aria-hidden="true"></i>
                      </div>
                  </div>
@@ -257,7 +259,9 @@
                              02
                          </div>
                          <h4 class="card-title">Specification</h4>
-                         <p>Our power of choice is untrammelled and when nothing prevents.</p>
+                         <p>পরবর্তীতে ক্লায়েন্টের মতামত অনুযায়ী কার্যস্থান দর্শন এবং পর্যবেক্ষণ করা হয়। সেই অনুযায়ী নকশা তৈরি করে বিস্তারিত তথ্য যক্ত করে প্রপোজাল লেটার পাঠানো হয়।
+                            পরিশেষে ক্লায়েন্টের সব পছন্দ হলে অন্তিম মিটিং করার মাধ্যমে মৌ (MOU) সাইনিং এর মধ্য দিয়ে চূড়ান্ত চুক্তি সম্পাদন হয়।
+                            </p>
                          <i class="fa fa-rocket" aria-hidden="true"></i>
                      </div>
                  </div>
@@ -267,7 +271,7 @@
                              03
                          </div>
                          <h4 class="card-title">Execution</h4>
-                         <p>Wing to the claims of duty the obligations will frequently occur.</p>
+                         <p>সবকিছু শেষে মাঠ পর্যায়ের কাজ শুরু হবে এবং চুক্তিপত্রে  বর্ণিত তারিখ অনুযায়ী কাজটি হ্যান্ডওভার করা হবে। </p>
                          <i class="fa fa-handshake-o" aria-hidden="true"></i>
                      </div>
                  </div>
@@ -288,7 +292,7 @@
                           <div class="title-header">
                               <h2 class="title text-white text-uppercase">OUR Blog</h2>
                           </div>
-                          <div class="title-desc mb-40 text-white">Lorem ipsum dolor sit amet consectetur adipisicing elit. Odit, accusantium id. Rem unde vel ut eaque pariatur?</div>
+                          <div class="title-desc mb-40 text-white">আমাদের ইন্টেরিয়র সেবা ও কাজগুলো সম্পর্কে বিস্তারিত জানতে আমাদের ব্লগগুলো দেখুন।</div>
                       </div><!-- section title end -->
                   </div>
                   <div class="col-md-2"></div>
@@ -298,7 +302,7 @@
                     <div class="col-12 col-md-6 col-lg-4 col-sm-4 mt-4">
                       <div class="featured-imagebox featured-imagebox-post">
                           <div class="featured-thumbnail">
-                              <img class="img-fluid" src="{{ url('images/blog/content') }}/{{ $blog->blog_image }}" alt="" style="max-height: 360px">
+                              <img class="img-fluid" src="{{ url('images/blog/content') }}/{{ $blog->blog_image }}" alt="" style="width: 100%; height: 300px; object-fit: cover; object-position: center center;">
                           </div>
                           <div class="featured-content featured-content-post">
                               <div class="post-meta">
@@ -338,7 +342,7 @@
                           <div class="title-header">
                               <h2 class="title">HAPPY CLIENTS</h2>
                           </div>
-                          <div class="title-desc mb-40 mb-0">Designing spaces that inspire</div>
+                          <div class="title-desc mb-40 mb-0">ক্লায়েন্টদের খুশি করার লক্ষে এবং সপ্নকে বাস্তবে রুপ দেওয়ার জন্য ইন্টেরিয়র বাংলাদেশ নিষ্ঠার সাথে প্রতিনিয়ত কাজ করে যাচ্ছে।সেই সাথে আপনি আপনার চাহিদা অনুযায়ী সর্বাধুনিক কাজও পেয়ে থাকবেন।</div>
                       </div><!-- section title end -->
                   </div>
                   <div class="col-md-2"></div>
@@ -358,7 +362,7 @@
                               <div class="testimonial-avatar d-flex justify-content-center">
                                   <div class="testimonial-img card1">
                                       <div class="face {{ $review->client_video_speech == '' ? '' : 'face1'}}">
-                                          <img style="object-fit: cover" class="img-center" src="{{ url('images/review') }}/{{ $review->client_image }}" alt="testimonial-img">
+                                          <img style="object-fit: cover" class="img-center" src="{{ url('images/review') }}/{{ $review->client_image }}" alt="testimonial-img" style="object-position: center center; object-fit: cover" >
                                       </div>
                                       @if($review->client_video_speech)
                                         <div class="face face2">

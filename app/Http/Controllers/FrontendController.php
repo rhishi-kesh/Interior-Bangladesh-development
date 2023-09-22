@@ -1,21 +1,30 @@
 <?php
 
 namespace App\Http\Controllers;
-
+use App\Http\Controllers\MailController;
+use App\Mail\ContactPageMail;
+use App\Mail\Newsletter;
 use App\Models\About;
 use App\Models\BlogContent;
 use App\Models\BlogVideo;
 use App\Models\ClientReview;
 use App\Models\Clients;
+use App\Models\ContactMassage;
 use App\Models\Gallery_Category;
 use App\Models\GalleryImage;
+use App\Models\Newsletter as ModelsNewsletter;
 use App\Models\Service;
 use App\Models\Slider;
 use App\Models\Team;
+use Carbon\Carbon;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Mail;
 
 class FrontendController extends Controller
 {
+    function notfound(){
+        return view('notfound');
+    }
     function main(){
         $title = '';
         $sliders = Slider::get();
@@ -40,6 +49,33 @@ class FrontendController extends Controller
     function contact(){
         $title = 'Contact';
         return view('forntend.pages.contact', compact('title'));
+    }
+    function contact_send(Request $request){
+        $validated = $request->validate([
+            'name' => 'required|max: 255',
+            'email' => 'required|email|max: 255',
+            'phone' => 'required|min:11|max:11|regex:/^([0-9\s\-\+\(\)]*)$/',
+            'message' => 'required'
+        ]);
+        $details =[
+            'name' => $request->name,
+            'email' => $request->email,
+            'phone' => $request->phone,
+            'message' => $request->message,
+        ];
+        $to = 'reshikash300@gmail.com';
+
+        $massage = Mail::to($to)->send(new \App\Mail\ContactPageMail($details));
+        if($massage){
+            ContactMassage::insert([
+                'name' => $request->name,
+                'email' => $request->email,
+                'phone' => $request->phone,
+                'massage' => $request->message,
+                'created_at' => Carbon::now()
+            ]);
+        }
+        return back()->with('success', 'Massage Send Successfull');
     }
     function gallery(){
         $title = 'Gallery';
@@ -73,18 +109,39 @@ class FrontendController extends Controller
         return view('forntend.pages.terms', compact('title'));
     }
     function singleservice($slug){
+        $title = $slug;
         $service_category = Service::get();
         $procuct = Service::where('slug', $slug)->firstOrFail();
-        return view('forntend.pages.single_service', compact('procuct', 'service_category'));
+        return view('forntend.pages.single_service', compact('procuct', 'service_category', 'title'));
     }
     function singlecontentblog($slug){
-        $content_blog = BlogContent::where('slug', $slug)->firstOrFail();
+        $title = $slug;
+        $content_blogs = BlogContent::where('slug', $slug)->firstOrFail();
         $recent_posts = BlogContent::limit(3)->get();
-        return view('forntend.pages.single_content_blog', compact('content_blog', 'recent_posts'));
+        return view('forntend.pages.single_content_blog', compact('content_blogs', 'recent_posts', 'title'));
     }
     function singlevideoblog($slug){
-        $video_blog = BlogVideo::where('slug', $slug)->firstOrFail();
+        $title = $slug;
+        $video_blogs = BlogVideo::where('slug', $slug)->firstOrFail();
         $recent_posts = BlogVideo::limit(3)->get();
-        return view('forntend.pages.single_video_blog', compact('video_blog', 'recent_posts'));
+        return view('forntend.pages.single_video_blog', compact('video_blogs', 'recent_posts', 'title'));
+    }
+    function newsletter(Request $request){
+
+        $validated = $request->validate([
+            'email' => 'required|email|max: 255'
+        ]);
+        $details =[
+            'email' => $request->email
+        ];
+
+        $massage = Mail::to($request->email)->send(new \App\Mail\Newsletter($details));
+        if($massage){
+            ModelsNewsletter::insert([
+                'gmail' => $request->email,
+                'created_at' => Carbon::now()
+            ]);
+        }
+        return back()->with('success', 'Thanks for subscribe us.');
     }
 }

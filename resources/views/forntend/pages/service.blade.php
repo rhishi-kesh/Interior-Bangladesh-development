@@ -42,7 +42,7 @@
                         <div class="col-12 col-md-6 col-lg-4 col-sm-4 mt-2">
                             <div class="service-item">
                                 <div class="service-img">
-                                    <img src="{{ url('images/service') }}/{{ $service->service_image }}" alt="img1" class="img-fluid">
+                                    <img src="{{ url('images/service') }}/{{ $service->service_image }}" alt="img1" class="img-fluid" style="width: 100%; height: 300px; object-fit: cover;">
                                 </div>
                                 <div class="service-details text-center">
                                     <h3>

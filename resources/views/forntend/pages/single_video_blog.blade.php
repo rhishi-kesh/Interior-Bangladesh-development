@@ -12,7 +12,7 @@
                         </div>
                         <div class="breadcrumb-wrapper">
                             <span>
-                                <a title="Homepage" href="index.html"><i class="ti ti-home"></i></a>
+                                <a title="Homepage" href="{{ route('main') }}"><i class="ti ti-home"></i></a>
                             </span>
                             <span class="ttm-bread-sep">&nbsp; / &nbsp;</span>
                             <span class="page-title"><span>Blog</span></span>
@@ -36,7 +36,7 @@
                             <div class="post-featured-wrapper">
                                 <div class="ttm-post-format-video">
                                     @php
-                                        $dynamic_link = $video_blog->video_link;
+                                        $dynamic_link = $video_blogs->video_link;
                                         $link = Str::replaceFirst('https://youtu.be', 'https://www.youtube.com/embed', $dynamic_link)
                                     @endphp
                                     <iframe width="560" height="200" src="{{ $link }}" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
@@ -50,34 +50,31 @@
                                         <div class="ttm-entry-meta">
                                             <span class="ttm-meta-line comments-link">
                                                 <i class="fa fa-calendar"></i>
-                                                <span class="ml-2">{{  date ( 'd/M/Y' , strtotime($video_blog->created_at) ) }}</span>
+                                                <span class="ml-2">{{  date ( 'd/M/Y' , strtotime($video_blogs->created_at) ) }}</span>
                                             </span>
                                         </div>
                                     </div>
                                     <div class="ttm-box-desc-text">
-                                        <h2 class="title text-uppercase text-center text-md-left">{{ $video_blog->blog_title }}</h2>
-                                        <p>{!! $video_blog->blog_subtitle !!}</p>
+                                        <h2 class="title text-uppercase text-center text-md-left">{{ $video_blogs->blog_title }}</h2>
+                                        <p>{!! $video_blogs->blog_subtitle !!}</p>
                                         <div class="ttm-social-share-wrapper">
                                             <div class="social-icons circle text-right">
                                                 <ul>
-                                                    <li>
-                                                        <a href="aa" target="_blank">
-                                                            <i class="fa fa-facebook"></i>
-                                                        </a>
+                                                    <li><a href="https://www.facebook.com/bangladeshinterior"><i class="fa fa-facebook"></i></a>
                                                     </li>
-                                                    <li><a href="" target="_blank"><i class="fa fa-twitter" target="_blank"></i></a></li>
-                                                    <li><a href="" target="_blank"><i class="fa fa-google-plus" target="_blank"></i></a></li>
+                                                    <li><a href="#"><i class="fa fa-instagram"></i></a>
+                                                    </li>
+                                                    <li><a href="#"><i class="fa fa-youtube-play"></i></a>
+                                                    </li>
+                                                    <li><a href="#"><i class="fa fa-linkedin"></i></a>
+                                                    </li>
                                                 </ul>
                                             </div>
-                                        </div>
-                                        <div class="ttm-post-prev-next-buttons clearfix">
-                                            <a class="ttm-btn ttm-btn-size-sm ttm-btn-shape-square ttm-icon-btn-left ttm-btn-style-fill ttm-btn-bgcolor-skincolor" href="#"><i class="ti ti-angle-double-left"></i>Previous</a>
-                                            <a class="ttm-btn ttm-btn-size-sm ttm-btn-shape-square ttm-icon-btn-right ttm-btn-style-fill ttm-btn-bgcolor-skincolor float-right" href="#"><i class="ti ti-angle-double-right"></i>Next</a>
                                         </div>
                                     </div>
                                 </div>
                             </div> <!-- ttm-blog-classic-box-content end -->
-                        </article><!-- post end -->
+                        </article>
                     </div>
                     <div class="col-lg-3 widget-area sidebar-right ttm-col-bgcolor-yes ttm-bg ttm-right-span ttm-bgcolor-grey">
                         <div class="ttm-col-wrapper-bg-layer ttm-bg-layer"></div>

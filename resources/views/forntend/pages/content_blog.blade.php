@@ -41,7 +41,7 @@
                             <!-- featured-imagebox-post -->
                             <div class="featured-imagebox featured-imagebox-post">
                                 <div class="featured-thumbnail">
-                                    <img class="img-fluid" src="{{ url('images/blog/content') }}/{{ $content_blog->blog_image }}" alt="">
+                                    <img class="img-fluid" src="{{ url('images/blog/content') }}/{{ $content_blog->blog_image }}" alt="" style="width: 100%; height: 300px; object-fit: cover; object-position: center center;">
                                 </div>
                                 <div class="featured-content featured-content-post">
                                     <div class="post-meta">

@@ -42,7 +42,7 @@
                         <div class="col-12 col-md-6 col-lg-3">
                             <div class="featured-imagebox featured-imagebox-team ttm-team-box-view-overlay box-shadow2 mb-30">
                                 <div class="featured-thumbnail">
-                                    <img class="img-fluid" src="{{ url('images/team') }}/{{ $team->team_image }}" alt="image" style="max-height: 400px; max-width: 360px">
+                                    <img class="img-fluid" src="{{ url('images/team') }}/{{ $team->team_image }}" alt="image" style="width: 100%; height: 350px; object-fit: cover; object-position: center center;">
                                 </div>
                                 <div class="featured-content featured-content-team">
                                     <div class="featured-title">

@@ -28,31 +28,18 @@
 <!-- flaticon -->
 <link rel="stylesheet" type="text/css" href="{{ url('frontend/css/flaticon.css') }}"/>
 
-
-<!-- REVOLUTION LAYERS STYLES -->
-
-<link rel="stylesheet" type="text/css" href="{{ url('frontend/revolution/css/layers.css') }}s">
-
-<link rel="stylesheet" type="text/css" href="{{ url('frontend/revolution/css/settings.css') }}s">
-
-<!-- prettyphoto -->
-<link rel="stylesheet" type="text/css" href="{{ url('frontend/css/prettyPhoto.css') }}s">
-
 <!-- shortcodes -->
 <link rel="stylesheet" type="text/css" href="{{ url('frontend/css/shortcodes.css') }}"/>
 
 <!-- main -->
 <link rel="stylesheet" type="text/css" href="{{ url('frontend/css/main.css') }}"/>
 
-<!--Color Switcher Mockup-->
-<link rel="stylesheet" type="text/css" href="{{ url('frontend/css/color-switcher.css') }}" />
 
 <!--Color Themes-->
 <link id="switcher-color" href="{{ url('frontend/css/colors/default-color.css') }}"/>
 
 <!-- responsive -->
 <link rel="stylesheet" type="text/css" href="{{ url('frontend/css/responsive.css') }}"/>
-
 </head>
 
 <body>
@@ -159,23 +146,25 @@
                 <div class="container">
                     <div class="ttm-topbar-content">
                         <ul class="top-contact ttm-highlight-left text-left">
-                            <li>
+                            <li class="text-white">
                                 <i class="fa fa-phone"></i>
                                 <a class="tel-no" href="tel:01534-545945"> 01534-545945</a>
                             </li>
                         </ul>
                         <div class="topbar-right d-flex justify-content-between">
                             <ul class="top-contact">
-                                <li>
+                                <li class="text-white">
                                     <i class="fa fa-envelope-o"></i>
                                     <a href="mailto:Interiorbangladesh@gmail.com">Interiorbangladesh@gmail.com</a>
                                 </li>
                             </ul>
-                            <div class="ttm-social-links-wrapper list-inline">
+                            <div class="ttm-social-links-wrapper list-inline d-flex justify-content-between">
                                 <ul class="social-icons">
-                                    <li><a href="#"><i class="fa fa-facebook"></i></a>
+                                    <li><a href="https://www.facebook.com/bangladeshinterior"><i class="fa fa-facebook"></i></a>
                                     </li>
-                                    <li><a href="#"><i class="fa fa-twitter"></i></a>
+                                    <li><a href="#"><i class="fa fa-instagram"></i></a>
+                                    </li>
+                                    <li><a href="#"><i class="fa fa-youtube-play"></i></a>
                                     </li>
                                     <li><a href="#"><i class="fa fa-linkedin"></i></a>
                                     </li>
@@ -186,7 +175,12 @@
                 </div>
             </div>
             <!-- ttm-topbar-wrapper end -->
-
+            @if(Session::has('success'))
+                <div class="alert alert-newsletter alert-success border-0 fade show" role="alert" style="position: absolute; right: 40px; top: 160px; width: 400px; z-index: 111;">
+                    <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                    <strong>{{ Session::get('success') }}</strong>
+                </div>
+            @endif
             <!-- ttm-header-wrap -->
             <div class="ttm-header-wrap">
                 <!-- ttm-stickable-header-w -->
@@ -276,15 +270,16 @@
                                                 </div>
                                                 <div class="featured-title">
                                                     <h5 class="text-center text-md-left">Subscribe To Our Newsletter</h5>
-                                                    <h6 class="text-center text-md-left">At vero eos et accusamus et iusto oddummy..</h6>
+                                                    <h6 class="text-center text-md-left">আমাদের নিউজলেটার সাবস্ক্রাইব করে আমাদের সাথে থাকুন।</h6>
                                                 </div>
                                             </div>
                                         </div>
                                     </div>
                                     <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6 widget-area">
-                                        <form id="subscribe-form" class="newsletter-form" method="post" action="#" data-mailchimp="true">
+                                        <form id="subscribe-form" class="newsletter-form" method="post" action="{{ route('newsletter') }}" data-mailchimp="true">
+                                            @csrf
                                             <div class="mailchimp-inputbox clearfix" id="subscribe-content">
-                                                <p><input type="email" name="email" placeholder="Email Address.." required=""></p>
+                                                <p><input type="email" name="email" placeholder="Email Address.." required></p>
                                                 <p><input type="submit" value="SUBSCRIBE"></p>
                                             </div>
                                             <div id="subscribe-msg"></div>
@@ -306,10 +301,12 @@
                                         <img id="footer-logo-img" class="img-center" src="{{ url('frontend/images/logo.png') }}" alt="">
                                     </a>
                                 </div>
-                                <p class="text-center text-md-left">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Voluptatibus impedit ab tenetur. Tempore perferendis dolor totam amet aperiam id nam, facilis vero quam consectetur consequatur officiis!</p>
+                                <p class="text-center text-md-left">ইন্টেরিয়র বাংলাদেশ একটি গতিশীল এবং উদ্ভাবনী কোম্পানি। কোম্পানিটি ২০১৭ সালে প্রতিষ্ঠিত হয়। আমাদের প্রতিষ্ঠান আবাসিক বা বাণিজ্যিক বিভিন্ন ধরনের বাড়ি, অফিস এবং একাডেমিক সুবিধা ইত্যাদির অভ্যন্তরীণ কাজ পরিচালনা করে থাকে। আমাদের কোম্পানিতে আছে দক্ষ আর্কিটেক্ট এবং ইঞ্জিনিয়ার যারা দক্ষতার সাথে কাজ করে থাকে। আমাদের সম্পর্কে আরও ভালো ভাবে জানতে আমাদের সার্ভিস পেজ ভিজিট করুন।</p>
                             </div>
                         </div>
-                        <div class="col-xs-12 col-sm-12 col-md-4 col-lg-4 widget-area mt-0 mt-md-5">
+                        <div class="col-xs-12 col-sm-12 col-md-4 col-lg-1">
+                        </div>
+                        <div class="col-xs-12 col-sm-12 col-md-4 col-lg-3 widget-area mt-0 mt-md-5">
                             <div class="widget widget_nav_menu clearfix">
                                <h3 class="widget-title sm-fixd-title  text-center text-md-left">Important Links</h3>
                                 <ul id="menu-footer-services">
@@ -366,20 +363,13 @@
                         <div class="col-md-4 ttm-footer2-right">
                            <div class="social-icons">
                                 <ul class="list-inline">
-                                    <li>
-                                        <a href="#">
-                                            <i class="fa fa-facebook" aria-hidden="true"></i>
-                                        </a>
+                                    <li><a href="https://www.facebook.com/bangladeshinterior"><i class="fa fa-facebook"></i></a>
                                     </li>
-                                    <li>
-                                        <a href="#">
-                                            <i class="fa fa-twitter" aria-hidden="true"></i>
-                                        </a>
-                                     </li>
-                                    <li>
-                                        <a href="#">
-                                            <i class="fa fa-linkedin" aria-hidden="true"></i>
-                                        </a>
+                                    <li><a href="#"><i class="fa fa-instagram"></i></a>
+                                    </li>
+                                    <li><a href="#"><i class="fa fa-youtube-play"></i></a>
+                                    </li>
+                                    <li><a href="#"><i class="fa fa-linkedin"></i></a>
                                     </li>
                                 </ul>
                             </div>
@@ -414,10 +404,18 @@
     <script type="text/javascript" src="{{ url('frontend/js/lg-thumbnail.min.js') }}"></script>
     <script src="http://cdnjs.cloudflare.com/ajax/libs/waypoints/2.0.3/waypoints.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/Counter-Up/1.0.0/jquery.counterup.js"></script>
+    @yield('jss')
+    <script>
+        window.setTimeout(function() {
+            $(".alert-newsletter").fadeTo(500, 0).slideUp(500, function(){
+                $(this).remove();
+            });
+        }, 5000);
+    </script>
     <script type="text/javascript">
         $('.counter').counterUp({
             delay: 5,
-            time: 1500
+            time: 500
         });
     </script>
     <script>
@@ -446,7 +444,7 @@
     </script>
     <script>
         $('.carousel').carousel({
-          interval: 4000,
+          interval: 3500,
           pause: false
         })
     </script>

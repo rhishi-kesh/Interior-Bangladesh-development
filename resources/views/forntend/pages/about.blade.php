@@ -161,7 +161,7 @@
                             <div class="title-header">
                                 <h2 class="title">Our Working Process</h2>
                             </div>
-                            <div class="title-desc">Raising a heavy fur muff that covered the whole of her lower arm towards the viewer regor then turned to look out the window</div>
+                            <div class="title-desc">আপনি শুধু আপনার ধারনা আমাদের সাথে শেয়ার করুন এবং আমরা নিশ্চিত করব যে আপনার ধারনা এবং আমাদের ডিজাইন মিলে একটি সেরা প্রজেক্টে রুপ নিবে যা ইন্টেরিয়র বাংলাদেশ দ্বারা সম্পাদন করা হবে। স্বপ্ন আপনার বাস্তবায়নের দায়িত্ব আমাদের।</div>
                         </div>
                     </div>
                     <div class="col-md-2"></div>
@@ -173,7 +173,7 @@
                                01
                            </div>
                            <h4 class="card-title">Idea & Design</h4>
-                           <p>With righteous indignation and works off beguiled demoralized charm.</p>
+                           <p>এই ধাপে আমরা ক্লাইন্ট এর সাথে প্রথমবার মিটিং করি এবং তাদের আইডিয়া, তাদের চাহিদা সম্পর্কে বিস্তারিত জানি বা জানার চেষ্টা করি।</p>
                            <i class="fa fa-handshake-o" aria-hidden="true"></i>
                        </div>
                    </div>
@@ -183,7 +183,7 @@
                                02
                            </div>
                            <h4 class="card-title">Specification</h4>
-                           <p>Our power of choice is untrammelled and when nothing prevents.</p>
+                           <p>পরবর্তীতে ক্লায়েন্টের মতামত অনুযায়ী কার্যস্থান দর্শন এবং পর্যবেক্ষণ করা হয়। সেই অনুযায়ী নকশা তৈরি করে বিস্তারিত তথ্য যক্ত করে প্রপোজাল লেটার পাঠানো হয়। পরিশেষে ক্লায়েন্টের সব পছন্দ হলে অন্তিম মিটিং করার মাধ্যমে মৌ (MOU) সাইনিং এর মধ্য দিয়ে চূড়ান্ত চুক্তি সম্পাদন হয়।</p>
                            <i class="fa fa-rocket" aria-hidden="true"></i>
                        </div>
                    </div>
@@ -193,7 +193,7 @@
                                03
                            </div>
                            <h4 class="card-title">Execution</h4>
-                           <p>Wing to the claims of duty the obligations will frequently occur.</p>
+                           <p>সবকিছু শেষে মাঠ পর্যায়ের কাজ শুরু হবে এবং চুক্তিপত্রে বর্ণিত তারিখ অনুযায়ী কাজটি হ্যান্ডওভার করা হবে।</p>
                            <i class="fa fa-handshake-o" aria-hidden="true"></i>
                        </div>
                    </div>

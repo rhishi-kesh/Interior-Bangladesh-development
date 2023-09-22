@@ -47,18 +47,17 @@
                             <div class="section-title without-sep-line clearfix">
                                 <div class="title-header">
                                     <div class="">
-                                        <img src="{{ url('images/service') }}/{{ $procuct->service_image }}" alt="img" class="img-fluid">
+                                        <img src="{{ url('images/service') }}/{{ $procuct->service_image }}" alt="img" class="img-fluid" style="width: 100%; height: 400px; object-fit: cover; object-position: center center;">
                                     </div>
                                     <h2 class="title mt-4 text-uppercase text-center text-md-left">{{ $procuct->service_name }}</h2>
                                     <p class="text-center text-md-left">{{ $procuct->service_subtitle }}</p>
                                     <h4 class="title">How to get this service?</h4>
+                                    <p>নির্মাণ সাইট বা আপনার স্বপ্নের প্রকল্প সম্পর্কে কোন পরামর্শ নিতে আপনি আমাদের সাথে যোগাযোগ করুন এবং আপনার প্রয়োজনীয়তা সম্পর্কে আলোচনা করুন  অনলাইন অথবা অফলাইনের উভয় মাধ্যমে।</p>
                                     <ul>
-                                        <li>
-                                            Lorem ipsum dolor sit amet, consectetur adipisicing, elit. Incidunt nulla labore ullam officia, aut rem velit praesentium illum voluptate esse. Nobis, ex minus accusantium facere voluptates. Minima culpa voluptate quaerat veniam. Accusantium exercitationem quidem voluptate a perspiciatis ipsum autem amet atque at. Obcaecati error asperiores.
-                                        </li>
-                                        <li>
-                                            Lorem ipsum dolor sit amet, consectetur adipisicing, elit. Incidunt nulla labore ullam officia, aut rem velit praesentium illum voluptate esse. Nobis, ex minus accusantium facere voluptates. Minima culpa voluptate quaerat veniam. Accusantium exercitationem quidem voluptate a perspiciatis ipsum autem amet atque at. Obcaecati error asperiores.
-                                        </li>
+                                        <li>ফোনে যোগাযোগের মাধ্যমে</li>
+                                        <li>ই-মেইল এর মাধ্যমে</li>
+                                        <li>আমাদের ফেসবুক পেইজ এর মাধ্যমে</li>
+                                        <li>সরাসরি অফিস ভিজিটিং এর মাধ্যমে</li>
                                     </ul>
                                     <!--actionbox-section-->
                                     <section class="service-foorer ttm-row actionbox-section ttm-bgcolor-skincolor ttm-textcolor-white ttm-reset-content-center-991 clearfix">
@@ -66,7 +65,7 @@
                                             <div class="row">
                                                 <div class="col-12">
                                                     <div class="mt-5 text-center ttm-reset-content-center-991">
-                                                        <h4>Wanna Get This Service Contact With US.</h4>
+                                                        <h4 class="text-white">সার্ভিস সম্পর্কে বিস্তারিত জানতে আমাদের সাথে যোগাযোগ করুন।</h4>
                                                     </div>
                                                 </div>
                                                 <div class="col-12 d-flex justify-content-center s-buttons mt-3 mb-0">

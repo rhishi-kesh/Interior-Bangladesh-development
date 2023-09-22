@@ -21,10 +21,13 @@ use App\Http\Controllers\ClientsController;
 */
 
 Route::get('/', [App\Http\Controllers\FrontendController::class, 'main'])->name('main');
+Route::get('/notfound', [App\Http\Controllers\FrontendController::class, 'notfound'])->name('notfound');
+
+Route::post('/newsletter', [App\Http\Controllers\FrontendController::class, 'newsletter'])->name('newsletter');
+
 Route::get('/about', [App\Http\Controllers\FrontendController::class, 'about'])->name('about_page');
 Route::get('/service', [App\Http\Controllers\FrontendController::class, 'service'])->name('service_page');
 Route::get('/service/item/{slug}', [App\Http\Controllers\FrontendController::class, 'singleservice'])->name('singleservice');
-Route::get('/contact', [App\Http\Controllers\FrontendController::class, 'contact'])->name('contact_page');
 Route::get('/gallery', [App\Http\Controllers\FrontendController::class, 'gallery'])->name('gallery_page');
 Route::get('/team', [App\Http\Controllers\FrontendController::class, 'team'])->name('team_page');
 Route::get('/content-blog', [App\Http\Controllers\FrontendController::class, 'content_blog'])->name('content_blog_page');
@@ -33,12 +36,26 @@ Route::get('/content-blog/item/{slug}', [App\Http\Controllers\FrontendController
 Route::get('/video-blog/item/{slug}', [App\Http\Controllers\FrontendController::class, 'singlevideoblog'])->name('singlevideoblog');
 Route::get('/privacy-policy', [App\Http\Controllers\FrontendController::class, 'privacy_policy'])->name('privacy_policy_page');
 Route::get('/terms-of-service', [App\Http\Controllers\FrontendController::class, 'terms_of_service'])->name('terms_of_service_page');
+
+Route::get('/contact', [App\Http\Controllers\FrontendController::class, 'contact'])->name('contact_page');
+Route::post('/contact-send', [App\Http\Controllers\FrontendController::class, 'contact_send'])->name('contact_page_send');
+
+
 Auth::routes();
 
 Route::middleware(['auth'])->group(function () {
 
-
+    //dashbord-index
     Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+
+    //newsletter-massage-delete
+    Route::get('/newsletter-delete/{id}', [App\Http\Controllers\HomeController::class, 'newsletterdelete'])->name('newsletterdelete');
+
+    //contact-massage-delete
+    Route::get('/delete-massage/{id}', [App\Http\Controllers\HomeController::class, 'deleteMassage'])->name('deleteMassage');
+
+    //search-contactUs-massage
+    Route::get('/contact-search', [App\Http\Controllers\HomeController::class, 'contactsearch'])->name('contactsearch');
 
     //about
     Route::get('/dashboard-about', [App\Http\Controllers\AboutController::class, 'about'])->name('about');
@@ -118,4 +135,10 @@ Route::middleware(['auth'])->group(function () {
     Route::post('/update-image', [App\Http\Controllers\ProfileController::class, 'update_image'])->name('update_image');
     Route::post('/update-information', [App\Http\Controllers\ProfileController::class, 'update_information'])->name('update_information');
     Route::post('/change-password', [App\Http\Controllers\ProfileController::class, 'change_password'])->name('change_password');
+});
+Route::middleware(['checkrole', 'auth'])->group(function () {
+    Route::get('/register-user', [App\Http\Controllers\UserController::class, 'register_user'])->name('register_user');
+    Route::post('/register-user-post', [App\Http\Controllers\UserController::class, 'register_user_post'])->name('register_user_post');
+    Route::get('/users', [App\Http\Controllers\UserController::class, 'users'])->name('users');
+    Route::get('/user-delete/{id}', [App\Http\Controllers\UserController::class, 'delete_user'])->name('delete_user');
 });

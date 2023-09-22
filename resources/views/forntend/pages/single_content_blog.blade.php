@@ -31,12 +31,11 @@
                 <!-- row -->
                 <div class="row">
                     <div class="col-lg-9 content-area">
-                        <!-- post -->
                         <article class="post ttm-blog-classic">
                             <!-- post-featured-wrapper -->
                             <div class="post-featured-wrapper">
                                 <div class="post-featured">
-                                    <img class="img-fluid" src="{{ url('images/blog/content') }}/{{ $content_blog->blog_image }}" alt="" class="single-blog-img">
+                                    <img class="img-fluid" src="{{ url('images/blog/content') }}/{{ $content_blogs->blog_image }}" alt="" class="single-blog-img" style="width: 100%; height: 400px; object-fit: cover; object-position: center center;">
                                 </div>
                             </div>
                             <!-- post-featured-wrapper end -->
@@ -47,34 +46,31 @@
                                         <div class="ttm-entry-meta">
                                             <span class="ttm-meta-line comments-link">
                                                 <i class="fa fa-calendar"></i>
-                                                <span class="ml-2"> {{  date ( 'd/M/Y' , strtotime($content_blog->created_at) ) }}</span>
+                                                <span class="ml-2"> {{  date ( 'd/M/Y' , strtotime($content_blogs->created_at) ) }}</span>
                                             </span>
                                         </div>
                                     </div>
                                     <div class="ttm-box-desc-text">
-                                        <h2 class="title text-uppercase text-center text-md-left">{{ $content_blog->blog_title }}</h2>
-                                        <p>{!! $content_blog->blog_subtitle !!}</p>
+                                        <h2 class="title text-uppercase text-center text-md-left">{{ $content_blogs->blog_title }}</h2>
+                                        <p>{!! $content_blogs->blog_subtitle !!}</p>
                                         <div class="ttm-social-share-wrapper">
                                             <div class="social-icons circle text-right">
                                                 <ul>
-                                                    <li>
-                                                        <a href="aa" target="_blank">
-                                                            <i class="fa fa-facebook"></i>
-                                                        </a>
+                                                    <li><a href="https://www.facebook.com/bangladeshinterior"><i class="fa fa-facebook"></i></a>
                                                     </li>
-                                                    <li><a href="" target="_blank"><i class="fa fa-twitter" target="_blank"></i></a></li>
-                                                    <li><a href="" target="_blank"><i class="fa fa-google-plus" target="_blank"></i></a></li>
+                                                    <li><a href="#"><i class="fa fa-instagram"></i></a>
+                                                    </li>
+                                                    <li><a href="#"><i class="fa fa-youtube-play"></i></a>
+                                                    </li>
+                                                    <li><a href="#"><i class="fa fa-linkedin"></i></a>
+                                                    </li>
                                                 </ul>
                                             </div>
-                                        </div>
-                                        <div class="ttm-post-prev-next-buttons clearfix">
-                                            <a class="ttm-btn ttm-btn-size-sm ttm-btn-shape-square ttm-icon-btn-left ttm-btn-style-fill ttm-btn-bgcolor-skincolor" href="#"><i class="ti ti-angle-double-left"></i>Previous</a>
-                                            <a class="ttm-btn ttm-btn-size-sm ttm-btn-shape-square ttm-icon-btn-right ttm-btn-style-fill ttm-btn-bgcolor-skincolor float-right" href="#"><i class="ti ti-angle-double-right"></i>Next</a>
                                         </div>
                                     </div>
                                 </div>
                             </div> <!-- ttm-blog-classic-box-content end -->
-                        </article><!-- post end -->
+                        </article>
                     </div>
                     <div class="col-lg-3 widget-area sidebar-right ttm-col-bgcolor-yes ttm-bg ttm-right-span ttm-bgcolor-grey">
                         <div class="ttm-col-wrapper-bg-layer ttm-bg-layer"></div>
