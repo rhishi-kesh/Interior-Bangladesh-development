@@ -8,14 +8,14 @@
                 <div class="col-md-12">
                     <div class="title-box ttm-textcolor-white">
                         <div class="page-title-heading">
-                            <h1 class="title">Team</h1>
+                            <h1 class="title">{{ __('messages.team') }}</h1>
                         </div>
                         <div class="breadcrumb-wrapper">
                             <span>
                                 <a href="{{ route('main') }}"><i class="ti ti-home"></i></a>
                             </span>
                             <span class="ttm-bread-sep">&nbsp; / &nbsp;</span>
-                            <span class="page-title"><span>Team</span></span>
+                            <span class="page-title"><span>{{ __('messages.team') }}</span></span>
                         </div>
                     </div>
                 </div>
@@ -32,7 +32,7 @@
                     <div class="col-lg-12">
                         <div class="section-title clearfix">
                             <div class="title-header sm-fixd-title">
-                                <h2 class="title text-uppercase">Our Team</h2>
+                                <h2 class="title text-uppercase">{{ __('messages.team_title') }}</h2>
                             </div>
                         </div>
                     </div>

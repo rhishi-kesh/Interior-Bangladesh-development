@@ -14,11 +14,11 @@ return new class extends Migration
     {
         Schema::create('abouts', function (Blueprint $table) {
             $table->id();
-            $table->string('choose_us');
+            $table->text('choose_us');
             $table->string('choose_us_image');
-            $table->string('mission');
+            $table->text('mission');
             $table->string('mission_image');
-            $table->string('vision');
+            $table->text('vision');
             $table->string('vision_image');
             $table->string('project_completed');
             $table->string('ongogin_project');

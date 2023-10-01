@@ -8,14 +8,14 @@
                 <div class="col-md-12">
                     <div class="title-box ttm-textcolor-white">
                         <div class="page-title-heading">
-                            <h1 class="title">Blog title</h1>
+                            <h1 class="title">{{ $video_blogs->blog_title }}</h1>
                         </div>
                         <div class="breadcrumb-wrapper">
                             <span>
                                 <a title="Homepage" href="{{ route('main') }}"><i class="ti ti-home"></i></a>
                             </span>
                             <span class="ttm-bread-sep">&nbsp; / &nbsp;</span>
-                            <span class="page-title"><span>Blog</span></span>
+                            <span class="page-title"><span>{{ __('messages.blog_video') }}</span></span>
                         </div>
                     </div>
                 </div>
@@ -79,7 +79,7 @@
                     <div class="col-lg-3 widget-area sidebar-right ttm-col-bgcolor-yes ttm-bg ttm-right-span ttm-bgcolor-grey">
                         <div class="ttm-col-wrapper-bg-layer ttm-bg-layer"></div>
                         <aside class="widget widget-recent-post">
-                            <h3 class="widget-title">Recent  posts</h3>
+                            <h3 class="widget-title">{{ __('messages.recent_post') }}</h3>
                             <ul class="ttm-recent-post-list">
                                 @foreach ($recent_posts as $recent_post)
                                     <li class="ttm-recent-post-list-li clearfix">

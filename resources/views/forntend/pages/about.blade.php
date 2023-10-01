@@ -8,7 +8,7 @@
                 <div class="col-md-12">
                     <div class="title-box ttm-textcolor-white">
                         <div class="page-title-heading">
-                            <h1 class="title">About Us</h1>
+                            <h1 class="title">{{ __('messages.about') }}</h1>
                         </div>
                         <div class="breadcrumb-wrapper">
                             <span>
@@ -17,7 +17,7 @@
                                 </a>
                             </span>
                             <span class="ttm-bread-sep">&nbsp; / &nbsp;</span>
-                            <span class="page-title"><span>About Us</span></span>
+                            <span class="page-title"><span>{{ __('messages.about') }}</span></span>
                         </div>
                     </div>
                 </div>
@@ -35,7 +35,7 @@
                         <!-- section title -->
                         <div class="section-title clearfix">
                             <div class="title-header sm-fixd-title">
-                                <h2 class="title text-uppercase">Why Choose Us</h2>
+                                <h2 class="title text-uppercase">{{ __('messages.choose_us') }}</h2>
                             </div>
                         </div><!-- section title end -->
                         <p class="text-center text-md-left">{{ $about->choose_us }}</p>
@@ -59,7 +59,7 @@
                         <!-- section title -->
                         <div class="section-title clearfix">
                             <div class="title-header title-header-left sm-fixd-title">
-                                <h2 class="title text-uppercase">Our Mission</h2>
+                                <h2 class="title text-uppercase">{{ __('messages.mission') }}</h2>
                             </div>
                         </div><!-- section title end -->
                         <p class="text-center text-md-right">{{ $about->mission }}</p>
@@ -77,7 +77,7 @@
                         <!-- section title -->
                         <div class="section-title clearfix">
                             <div class="title-header sm-fixd-title">
-                                <h2 class="title text-uppercase">Our Vision</h2>
+                                <h2 class="title text-uppercase">{{ __('messages.vision') }}</h2>
                             </div>
                         </div><!-- section title end -->
                         <p class="text-center text-md-left">{{ $about->vision }}</p>
@@ -103,7 +103,7 @@
                                 </h4>
                             </div>
                             <div class="ttm-fid-contents">
-                                <h3 class="ttm-fid-title">Projects Completed</h3>
+                                <h3 class="ttm-fid-title">{{ __('messages.project_complete') }}</h3>
                             </div>
                         </div>
                     </div>
@@ -116,7 +116,7 @@
                                 </h4>
                             </div>
                             <div class="ttm-fid-contents">
-                                <h3 class="ttm-fid-title">Ongoing  Projects</h3>
+                                <h3 class="ttm-fid-title">{{ __('messages.project_ongoing') }}</h3>
                             </div>
                         </div>
                     </div>
@@ -129,7 +129,7 @@
                                 </h4>
                             </div>
                             <div class="ttm-fid-contents">
-                                <h3 class="ttm-fid-title">Work Employed</h3>
+                                <h3 class="ttm-fid-title">{{ __('messages.employed') }}</h3>
                             </div>
                         </div>
                     </div>
@@ -142,7 +142,7 @@
                                 </h4>
                             </div>
                             <div class="ttm-fid-contents">
-                                <h3 class="ttm-fid-title">Years Experiance</h3>
+                                <h3 class="ttm-fid-title">{{ __('messages.experience') }}</h3>
                             </div>
                         </div>
                     </div>
@@ -159,9 +159,9 @@
                     <div class="col-md-8">
                         <div class="section-title with-desc title-style-center_text clearfix">
                             <div class="title-header">
-                                <h2 class="title">Our Working Process</h2>
+                                <h2 class="title">{{ __('messages.work_process_title') }}</h2>
                             </div>
-                            <div class="title-desc">আপনি শুধু আপনার ধারনা আমাদের সাথে শেয়ার করুন এবং আমরা নিশ্চিত করব যে আপনার ধারনা এবং আমাদের ডিজাইন মিলে একটি সেরা প্রজেক্টে রুপ নিবে যা ইন্টেরিয়র বাংলাদেশ দ্বারা সম্পাদন করা হবে। স্বপ্ন আপনার বাস্তবায়নের দায়িত্ব আমাদের।</div>
+                            <div class="title-desc">{{ __('messages.work_process_subtitle') }}</div>
                         </div>
                     </div>
                     <div class="col-md-2"></div>
@@ -172,8 +172,8 @@
                            <div class="work-process-number">
                                01
                            </div>
-                           <h4 class="card-title">Idea & Design</h4>
-                           <p>এই ধাপে আমরা ক্লাইন্ট এর সাথে প্রথমবার মিটিং করি এবং তাদের আইডিয়া, তাদের চাহিদা সম্পর্কে বিস্তারিত জানি বা জানার চেষ্টা করি।</p>
+                           <h4 class="card-title">{{ __('messages.process1_title') }}</h4>
+                           <p>{{ __('messages.process1_subtitle') }}</p>
                            <i class="fa fa-handshake-o" aria-hidden="true"></i>
                        </div>
                    </div>
@@ -182,8 +182,8 @@
                            <div class="work-process-number">
                                02
                            </div>
-                           <h4 class="card-title">Specification</h4>
-                           <p>পরবর্তীতে ক্লায়েন্টের মতামত অনুযায়ী কার্যস্থান দর্শন এবং পর্যবেক্ষণ করা হয়। সেই অনুযায়ী নকশা তৈরি করে বিস্তারিত তথ্য যক্ত করে প্রপোজাল লেটার পাঠানো হয়। পরিশেষে ক্লায়েন্টের সব পছন্দ হলে অন্তিম মিটিং করার মাধ্যমে মৌ (MOU) সাইনিং এর মধ্য দিয়ে চূড়ান্ত চুক্তি সম্পাদন হয়।</p>
+                           <h4 class="card-title">{{ __('messages.process2_title') }}</h4>
+                           <p>{{ __('messages.process2_subtitle') }}</p>
                            <i class="fa fa-rocket" aria-hidden="true"></i>
                        </div>
                    </div>
@@ -192,8 +192,8 @@
                            <div class="work-process-number">
                                03
                            </div>
-                           <h4 class="card-title">Execution</h4>
-                           <p>সবকিছু শেষে মাঠ পর্যায়ের কাজ শুরু হবে এবং চুক্তিপত্রে বর্ণিত তারিখ অনুযায়ী কাজটি হ্যান্ডওভার করা হবে।</p>
+                           <h4 class="card-title">{{ __('messages.process3_title') }}</h4>
+                           <p>{{ __('messages.process3_subtitle') }}</p>
                            <i class="fa fa-handshake-o" aria-hidden="true"></i>
                        </div>
                    </div>

@@ -142,31 +142,35 @@
         <header id="masthead" class="header ttm-header-style-classic">
 
             <!-- ttm-topbar-wrapper -->
-            <div class="ttm-topbar-wrapper ttm-bgcolor-darkgrey ttm-textcolor-white clearfix">
+            <div class="ttm-bgcolor-darkgrey ttm-textcolor-white clearfix py-1">
                 <div class="container">
-                    <div class="ttm-topbar-content">
-                        <ul class="top-contact ttm-highlight-left text-left">
-                            <li class="text-white">
-                                <i class="fa fa-phone"></i>
-                                <a class="tel-no" href="tel:01534-545945"> 01534-545945</a>
-                            </li>
-                        </ul>
-                        <div class="topbar-right d-flex justify-content-between">
-                            <ul class="top-contact">
-                                <li class="text-white">
-                                    <i class="fa fa-envelope-o"></i>
+                    <div class="row top-header">
+                        <div class="col-12 col-md-7">
+                            <ul class="contact-content">
+                                <li class="text-white d-block">
+                                    <i class="fa fa-phone mr-1"></i>
+                                    <a class="tel-no" href="tel:01534-545945"> {{ __('messages.number') }}</a>
+                                </li>
+                                <li class="text-white ml-4  d-block">
+                                    <i class="fa fa-envelope-o mr-1"></i>
                                     <a href="mailto:Interiorbangladesh@gmail.com">Interiorbangladesh@gmail.com</a>
                                 </li>
                             </ul>
-                            <div class="ttm-social-links-wrapper list-inline d-flex justify-content-between">
+                        </div>
+                        <div class="col-12 col-md-5">
+                            <div class="ttm-social-links-wrapper list-inline top-lan-icon py-1 py-md-0">
+                                <select class="form-control shadow-none changeLang mr-3">
+                                    <option value="en" {{ session()->get('locale') == 'en' ? 'selected' : '' }}>English</option>
+                                    <option value="bn" {{ session()->get('locale') == 'bn' ? 'selected' : '' }}>বাংলা</option>
+                                </select>
                                 <ul class="social-icons">
-                                    <li><a href="https://www.facebook.com/bangladeshinterior"><i class="fa fa-facebook"></i></a>
+                                    <li class="mr-1"><a href="https://www.facebook.com/bangladeshinterior"><i class="fa fa-facebook"></i></a>
                                     </li>
-                                    <li><a href="#"><i class="fa fa-instagram"></i></a>
+                                    <li class="mr-1"><a href="#"><i class="fa fa-instagram"></i></a>
                                     </li>
-                                    <li><a href="#"><i class="fa fa-youtube-play"></i></a>
+                                    <li class="mr-1"><a href="#"><i class="fa fa-youtube-play"></i></a>
                                     </li>
-                                    <li><a href="#"><i class="fa fa-linkedin"></i></a>
+                                    <li class="mr-1"><a href="#"><i class="fa fa-linkedin"></i></a>
                                     </li>
                                 </ul>
                             </div>
@@ -209,34 +213,34 @@
                                     <nav id="menu" class="menu">
                                         <ul class="dropdown">
                                             <li>
-                                                <a href="{{ route('main') }}" class="{{ Request::routeIs('main') ? 'active' : '' }}">Home</a>
+                                                <a href="{{ route('main') }}" class="{{ Request::routeIs('main') ? 'active' : '' }}">{{ __('messages.home') }}</a>
                                             </li>
                                             <li>
-                                                <a href="{{ route('service_page') }}" class="{{ Request::routeIs('service_page') || Request::routeIs('singleservice') ? 'active' : '' }}">Services</a>
+                                                <a href="{{ route('service_page') }}" class="{{ Request::routeIs('service_page') || Request::routeIs('singleservice') ? 'active' : '' }}">{{ __('messages.service') }}</a>
                                             </li>
                                             <li>
-                                                <a href="{{ route('about_page') }}"  class="{{ Request::routeIs('about_page') ? 'active' : '' }}">About Us</a>
+                                                <a href="{{ route('about_page') }}"  class="{{ Request::routeIs('about_page') ? 'active' : '' }}">{{ __('messages.about') }}</a>
                                             </li>
                                             <li>
-                                                <a href="{{ route('team_page') }}"  class="{{ Request::routeIs('team_page') ? 'active' : '' }}">Team</a>
+                                                <a href="{{ route('team_page') }}"  class="{{ Request::routeIs('team_page') ? 'active' : '' }}">{{ __('messages.team') }}</a>
                                             </li>
                                             <li>
-                                                <a href="{{ route('gallery_page') }}"  class="{{ Request::routeIs('gallery_page') ? 'active' : '' }}">Gallery</a>
+                                                <a href="{{ route('gallery_page') }}"  class="{{ Request::routeIs('gallery_page') ? 'active' : '' }}">{{ __('messages.gallery') }}</a>
                                             </li>
                                             <li class="has-submenu">
                                                 <a href="#"
-                                                    class="@if (Request::routeIs('content_blog_page')) active @elseif(Request::routeIs('video_blog_page')) active @endif">Blog</a>
+                                                    class="@if (Request::routeIs('content_blog_page')) active @elseif(Request::routeIs('video_blog_page')) active @endif">{{ __('messages.blog') }}</a>
                                                 <ul>
                                                     <li>
-                                                        <a href="{{ route('content_blog_page') }}" class="{{ Request::routeIs('content_blog_page') ? 'active' : '' }}">Content</a>
+                                                        <a href="{{ route('content_blog_page') }}" class="{{ Request::routeIs('content_blog_page') ? 'active' : '' }}">{{ __('messages.blog_content') }}</a>
                                                     </li>
                                                     <li>
-                                                        <a href="{{ route('video_blog_page') }}"  class="{{ Request::routeIs('video_blog_page') ? 'active' : '' }}">Video</a>
+                                                        <a href="{{ route('video_blog_page') }}"  class="{{ Request::routeIs('video_blog_page') ? 'active' : '' }}">{{ __('messages.blog_video') }}</a>
                                                     </li>
                                                 </ul>
                                             </li>
                                             <li>
-                                                <a href="{{ route('contact_page') }}"  class="{{ Request::routeIs('contact_page') ? 'active' : '' }}">Contact</a>
+                                                <a href="{{ route('contact_page') }}"  class="{{ Request::routeIs('contact_page') ? 'active' : '' }}">{{ __('messages.contact') }}</a>
                                             </li>
                                         </ul>
                                     </nav>
@@ -269,8 +273,8 @@
                                                     </div>
                                                 </div>
                                                 <div class="featured-title">
-                                                    <h5 class="text-center text-md-left">Subscribe To Our Newsletter</h5>
-                                                    <h6 class="text-center text-md-left">আমাদের নিউজলেটার সাবস্ক্রাইব করে আমাদের সাথে থাকুন।</h6>
+                                                    <h5 class="text-center text-md-left">{{ __('messages.newsletter_title') }}</h5>
+                                                    <h6 class="text-center text-md-left">{{ __('messages.newsletter_subtitle') }}</h6>
                                                 </div>
                                             </div>
                                         </div>
@@ -279,8 +283,8 @@
                                         <form id="subscribe-form" class="newsletter-form" method="post" action="{{ route('newsletter') }}" data-mailchimp="true">
                                             @csrf
                                             <div class="mailchimp-inputbox clearfix" id="subscribe-content">
-                                                <p><input type="email" name="email" placeholder="Email Address.." required></p>
-                                                <p><input type="submit" value="SUBSCRIBE"></p>
+                                                <p><input type="email" name="email" placeholder="{{ __('messages.email_feild') }}" required></p>
+                                                <p><input type="submit" value="{{ __('messages.newsletter_btn') }}"></p>
                                             </div>
                                             <div id="subscribe-msg"></div>
                                         </form>
@@ -301,37 +305,37 @@
                                         <img id="footer-logo-img" class="img-center" src="{{ url('frontend/images/logo.png') }}" alt="">
                                     </a>
                                 </div>
-                                <p class="text-center text-md-left">ইন্টেরিয়র বাংলাদেশ একটি গতিশীল এবং উদ্ভাবনী কোম্পানি। কোম্পানিটি ২০১৭ সালে প্রতিষ্ঠিত হয়। আমাদের প্রতিষ্ঠান আবাসিক বা বাণিজ্যিক বিভিন্ন ধরনের বাড়ি, অফিস এবং একাডেমিক সুবিধা ইত্যাদির অভ্যন্তরীণ কাজ পরিচালনা করে থাকে। আমাদের কোম্পানিতে আছে দক্ষ আর্কিটেক্ট এবং ইঞ্জিনিয়ার যারা দক্ষতার সাথে কাজ করে থাকে। আমাদের সম্পর্কে আরও ভালো ভাবে জানতে আমাদের সার্ভিস পেজ ভিজিট করুন।</p>
+                                <p class="text-center text-md-left">{{ __('messages.footer_about') }}</p>
                             </div>
                         </div>
                         <div class="col-xs-12 col-sm-12 col-md-4 col-lg-1">
                         </div>
                         <div class="col-xs-12 col-sm-12 col-md-4 col-lg-3 widget-area mt-0 mt-md-5">
                             <div class="widget widget_nav_menu clearfix">
-                               <h3 class="widget-title sm-fixd-title  text-center text-md-left">Important Links</h3>
+                               <h3 class="widget-title sm-fixd-title  text-center text-md-left">{{ __('messages.links') }}</h3>
                                 <ul id="menu-footer-services">
                                     <li>
-                                        <a href="{{ route('privacy_policy_page') }}">Privacy Policy</a>
+                                        <a href="{{ route('privacy_policy_page') }}">{{ __('messages.privacy') }}</a>
                                     </li>
                                     <li>
-                                        <a href="{{ route('about_page') }}">About Us</a>
+                                        <a href="{{ route('about_page') }}">{{ __('messages.about') }}</a>
                                     </li>
                                     <li>
-                                        <a href="{{ route('terms_of_service_page') }}">Terms of Service</a>
+                                        <a href="{{ route('terms_of_service_page') }}">{{ __('messages.terms') }}</a>
                                     </li>
                                     <li>
-                                        <a href="{{ route('contact_page') }}">Contact Us</a>
+                                        <a href="{{ route('contact_page') }}">{{ __('messages.contact') }}</a>
                                     </li>
                                 </ul>
                             </div>
                         </div>
                         <div class="col-xs-12 col-sm-12 col-md-4 col-lg-4 widget-area  mt-0 mt-md-5">
                             <div class="widget flicker_widget clearfix">
-                               <h3 class="widget-title sm-fixd-title  text-center text-md-left">Contact Us</h3>
+                               <h3 class="widget-title sm-fixd-title  text-center text-md-left">{{ __('messages.contact_title') }}</h3>
                                <div class="">
                                     <div class="d-flex justify-content-center justify-content-md-start mt-2 footer_link" style="gap: 10px">
                                         <i class="fa fa-phone d-none d-md-block" style="margin-top: 5px;"></i>
-                                        <a href="tel:01534-545945" class="text-center text-md-left">01534-545945</a>
+                                        <a href="tel:01534-545945" class="text-center text-md-left">{{ __('messages.number') }}</a>
                                     </div>
                                     <div class="d-flex justify-content-center justify-content-md-start mt-2 footer_link" style="gap: 10px">
                                         <i class="fa fa-envelope-o d-none d-md-block" style="margin-top: 5px;"></i>
@@ -339,13 +343,13 @@
                                     </div>
                                     <div class="d-flex justify-content-center justify-content-md-start mt-2 footer_link" style="gap: 10px">
                                         <i class="fa fa-map-marker d-none d-md-block" style="margin-top: 5px;" aria-hidden="true"></i>
-                                        <a href="https://goo.gl/maps/VaouWtsjwJTLmeM97" class="text-center text-md-left" target="_blank">Fahad Plaza, 4thFloor,Mutual Trust Bank Building, Mirpur 10, Dhaka</a>
+                                        <a href="https://goo.gl/maps/VaouWtsjwJTLmeM97" class="text-center text-md-left" target="_blank">{{ __('messages.locatiion') }}</a>
                                     </div>
                                     <div>
-                                        <h5 class="open_time mb-0 widget-title sm-fixd-title  text-center text-md-left">Opening Hour</h5>
+                                        <h5 class="open_time mb-0 widget-title sm-fixd-title  text-center text-md-left">{{ __('messages.opening_hour') }}</h5>
                                         <div class="text-center text-md-left ">
                                             <i class="fa fa-clock-o d-none d-md-inline-block"></i>
-                                            <span class="ml-1"> Sat - Friday : 09:00 am - 09:00 pm </span>
+                                            <span class="ml-1">{{ __('messages.opening_hour_time') }}</span>
                                         </div>
                                     </div>
                                 </div>
@@ -405,6 +409,23 @@
     <script src="http://cdnjs.cloudflare.com/ajax/libs/waypoints/2.0.3/waypoints.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/Counter-Up/1.0.0/jquery.counterup.js"></script>
     @yield('jss')
+    <script type="text/javascript">
+
+
+
+        var url = "{{ route('changeLang') }}";
+
+
+
+        $(".changeLang").change(function(){
+
+            window.location.href = url + "?lang="+ $(this).val();
+
+        });
+
+
+
+    </script>
     <script>
         window.setTimeout(function() {
             $(".alert-newsletter").fadeTo(500, 0).slideUp(500, function(){

@@ -17,7 +17,7 @@ return new class extends Migration
             $table->string('client_city');
             $table->string('client_image');
             $table->string('client_video_speech')->nullable();
-            $table->string('client_speech');
+            $table->text('client_speech');
             $table->timestamps();
             $table->softDeletes();
         });

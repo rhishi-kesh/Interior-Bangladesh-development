@@ -29,10 +29,10 @@ class FrontendController extends Controller
         $title = '';
         $sliders = Slider::get();
         $about = About::first();
-        $services = Service::limit('3')->get();
+        $services = Service::take('3')->get();
         $clients = Clients::get();
-        $teams = Team::limit('3')->get();
-        $blogs = BlogContent::limit('3')->get();
+        $teams = Team::take('3')->get();
+        $blogs = BlogContent::take('3')->get();
         $reviews = ClientReview::get();
         return view('forntend.pages.index', compact('sliders','about','services','clients','teams','blogs','reviews'));
     }
@@ -63,7 +63,7 @@ class FrontendController extends Controller
             'phone' => $request->phone,
             'message' => $request->message,
         ];
-        $to = 'reshikash300@gmail.com';
+        $to = 'interiorbangladesh724@gmail.com';
 
         $massage = Mail::to($to)->send(new \App\Mail\ContactPageMail($details));
         if($massage){

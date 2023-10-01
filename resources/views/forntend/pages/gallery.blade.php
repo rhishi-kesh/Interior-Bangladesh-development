@@ -8,14 +8,14 @@
                 <div class="col-md-12">
                     <div class="title-box ttm-textcolor-white">
                         <div class="page-title-heading">
-                            <h1 class="title">Gallery</h1>
+                            <h1 class="title">{{ __('messages.gallery') }}</h1>
                         </div>
                         <div class="breadcrumb-wrapper">
                             <span>
                                 <a href="{{ route('main') }}"><i class="ti ti-home"></i></a>
                             </span>
                             <span class="ttm-bread-sep">&nbsp; / &nbsp;</span>
-                            <span class="page-title"><span>Gallery</span></span>
+                            <span class="page-title"><span>{{ __('messages.gallery') }}</span></span>
                         </div>
                     </div>
                 </div>
@@ -31,9 +31,9 @@
                 <div class="row justify-content-center">
                     <div class="col-12 col-md-8">
                         <div class="title-header">
-                            <h2 class="title mb-0 text-uppercase">Our Gallery</h2>
+                            <h2 class="title mb-0 text-uppercase">{{ __('messages.gallery_title') }}</h2>
                         </div>
-                        <p>Lorem, ipsum dolor sit, amet consectetur adipisicing elit. Quod itaque laudantium, nihil et mollitia non. Necessitatibus, itaque!</p>
+                        <p>{{ __('messages.gallery_subtitle') }}</p>
                     </div>
                 </div>
                 <div class="row mb-15 mt-2 mb-5" id="lightgallery">

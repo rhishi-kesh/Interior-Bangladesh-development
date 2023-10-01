@@ -15,7 +15,7 @@ return new class extends Migration
             $table->id();
             $table->string('service_name');
             $table->string('service_image');
-            $table->string('service_subtitle');
+            $table->text('service_subtitle');
             $table->string('slug');
             $table->timestamps();
             $table->softDeletes();

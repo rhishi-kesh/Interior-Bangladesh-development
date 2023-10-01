@@ -14,7 +14,7 @@ return new class extends Migration
         Schema::create('blog_videos', function (Blueprint $table) {
             $table->id();
             $table->string('blog_title');
-            $table->string('blog_subtitle');
+            $table->text('blog_subtitle');
             $table->text('video_link');
             $table->text('slug');
             $table->timestamps();

@@ -8,14 +8,14 @@
                 <div class="col-md-12">
                     <div class="title-box ttm-textcolor-white">
                         <div class="page-title-heading">
-                            <h1 class="title">Service</h1>
+                            <h1 class="title">{{ $procuct->service_name }}</h1>
                         </div>
                         <div class="breadcrumb-wrapper">
                             <span>
                                 <a href="{{ route('main') }}"><i class="ti ti-home"></i></a>
                             </span>
                             <span class="ttm-bread-sep">&nbsp; / &nbsp;</span>
-                            <span class="page-title"><span>Service</span></span>
+                            <span class="page-title"><span>{{ __('messages.service') }}</span></span>
                         </div>
                     </div>
                 </div>
@@ -50,8 +50,8 @@
                                         <img src="{{ url('images/service') }}/{{ $procuct->service_image }}" alt="img" class="img-fluid" style="width: 100%; height: 400px; object-fit: cover; object-position: center center;">
                                     </div>
                                     <h2 class="title mt-4 text-uppercase text-center text-md-left">{{ $procuct->service_name }}</h2>
-                                    <p class="text-center text-md-left">{{ $procuct->service_subtitle }}</p>
-                                    <h4 class="title">How to get this service?</h4>
+                                    <p class="text-center text-md-left">{!! $procuct->service_subtitle !!}</p>
+                                    <h4 class="title">কীভাবে এ সেবা নিতে পারবে?</h4>
                                     <p>নির্মাণ সাইট বা আপনার স্বপ্নের প্রকল্প সম্পর্কে কোন পরামর্শ নিতে আপনি আমাদের সাথে যোগাযোগ করুন এবং আপনার প্রয়োজনীয়তা সম্পর্কে আলোচনা করুন  অনলাইন অথবা অফলাইনের উভয় মাধ্যমে।</p>
                                     <ul>
                                         <li>ফোনে যোগাযোগের মাধ্যমে</li>
@@ -65,7 +65,7 @@
                                             <div class="row">
                                                 <div class="col-12">
                                                     <div class="mt-5 text-center ttm-reset-content-center-991">
-                                                        <h4 class="text-white">সার্ভিস সম্পর্কে বিস্তারিত জানতে আমাদের সাথে যোগাযোগ করুন।</h4>
+                                                        <h4 class="text-white">{{ __('messages.contact_for_service') }}</h4>
                                                     </div>
                                                 </div>
                                                 <div class="col-12 d-flex justify-content-center s-buttons mt-3 mb-0">
@@ -76,7 +76,7 @@
                                                     </div>
                                                     <div class="ml-3">
                                                         <a href="contact.html" class="contact">
-                                                            contact us
+                                                            {{ __('messages.contact_title') }}
                                                         </a>
                                                     </div>
                                                 </div>

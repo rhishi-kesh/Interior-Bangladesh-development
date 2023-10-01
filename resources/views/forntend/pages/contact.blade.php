@@ -8,14 +8,14 @@
                 <div class="col-md-12">
                     <div class="title-box ttm-textcolor-white">
                         <div class="page-title-heading">
-                            <h1 class="title">Contact</h1>
+                            <h1 class="title">{{ __('messages.contact') }}</h1>
                         </div>
                         <div class="breadcrumb-wrapper">
                             <span>
                                 <a href="{{ route('main') }}"><i class="ti ti-home"></i></a>
                             </span>
                             <span class="ttm-bread-sep">&nbsp; / &nbsp;</span>
-                            <span class="page-title"><span>Contact</span></span>
+                            <span class="page-title"><span>{{ __('messages.contact') }}</span></span>
                         </div>
                     </div>
                 </div>
@@ -45,8 +45,8 @@
                 @endsection
                 <div class="row justify-content-center">
                     <div class="col-12 col-md-8 text-center">
-                        <h2 class="text-uppercase title">Get Touch with Us</h2>
-                        <p class="title-desc">আমরা সবসময় আপনার প্রশ্নের উত্তর দিতে এবং আপনার ফিডব্যাক শুনতে প্রস্তুত।আপনি ফোন, ইমেল বা সোশ্যাল মিডিয়ার মাধ্যমে আমাদের সাথে যোগাযোগ করতে পারেন।ইন্টেরিয়র বাংলাদেশকে বেছে নেয়ার জন্য আপনাকে ধন্যবাদ!</p>
+                        <h2 class="text-uppercase title">{{ __('messages.contact_title') }}</h2>
+                        <p class="title-desc">{{ __('messages.contact_subtitle') }}</p>
                     </div>
                 </div>
                 <div class="row">
@@ -65,8 +65,8 @@
                                             </span>
                                         </div>
                                         <div class="text-holder">
-                                            <h5>Phone:</h5>
-                                            <p>01534-545945</p>
+                                            <h5>{{ __('messages.phone') }}:</h5>
+                                            <p>{{ __('messages.number') }}</p>
                                         </div>
                                     </div>
                                 </div>
@@ -80,7 +80,7 @@
                                             </span>
                                         </div>
                                         <div class="text-holder">
-                                            <h5>Email Address:</h5>
+                                            <h5>{{ __('messages.email') }}:</h5>
                                             <p>Interiorbangladesh@gmail.com</p>
                                         </div>
                                     </div>
@@ -95,8 +95,8 @@
                                             </span>
                                         </div>
                                         <div class="text-holder">
-                                            <h5>Address:</h5>
-                                            <p>Fahad Plaza, 4thFloor,Mutual Trust Bank Building, Mirpur 10, Dhaka</p>
+                                            <h5>{{ __('messages.address') }}:</h5>
+                                            <p>{{ __('messages.locatiion') }}</p>
                                         </div>
                                     </div>
                                 </div>
@@ -110,8 +110,8 @@
                                             </span>
                                         </div>
                                         <div class="text-holder">
-                                            <h5>Working Hours:</h5>
-                                            <p>Sat - Friday : 09:00 am - 09:00 pm</p>
+                                            <h5>{{ __('messages.opening_hour') }}:</h5>
+                                            <p>{{ __('messages.opening_hour_time') }}</p>
                                         </div>
                                     </div>
                                 </div>
@@ -123,24 +123,24 @@
                         <div class="contact-form-v1">
                             <form action="{{ route('contact_page_send') }}" method="POST">
                                 @csrf
-                                <input type="text" name="name" value="{{ old('name') }}" placeholder="Your Name*" class="@error('name') is-invalid @enderror" required>
+                                <input type="text" name="name" value="{{ old('name') }}" placeholder="{{ __('messages.name_feild') }}" class="@error('name') is-invalid @enderror" required>
                                 @error('name')
                                     <div class="alert alert-danger">{{ $message }}</div>
                                 @enderror
-                                <input type="email" name="email" value="{{ old('email') }}" placeholder="Your E-mail*" class="mt-4 @error('email') is-invalid @enderror" required>
+                                <input type="email" name="email" value="{{ old('email') }}" placeholder="{{ __('messages.email_feild') }}" class="mt-4 @error('email') is-invalid @enderror" required>
                                 @error('email')
                                     <div class="alert alert-danger">{{ $message }}</div>
                                 @enderror
-                                <input type="number" name="phone" class="mt-4 @error('phone') is-invalid @enderror" value="{{ old('phone') }}" placeholder="Phone">
+                                <input type="number" name="phone" class="mt-4 @error('phone') is-invalid @enderror" value="{{ old('phone') }}" placeholder="{{ __('messages.phone_feild') }}">
                                 @error('phone')
                                     <div class="alert alert-danger">{{ $message }}</div>
                                 @enderror
-                                <textarea name="message" class="mt-4 @error('message') is-invalid @enderror" placeholder="Your Message.." required rows="6">{{ old('message') }}</textarea>
+                                <textarea name="message" class="mt-4 @error('message') is-invalid @enderror" placeholder="{{ __('messages.massage') }}" required rows="6">{{ old('message') }}</textarea>
                                 @error('message')
                                     <div class="alert alert-danger">{{ $message }}</div>
                                 @enderror
                                 <button class="ttm-btn ttm-btn-size-sm ttm-btn-shape-square ttm-icon-btn-right ttm-btn-style-fill ttm-btn-bgcolor-skincolor" type="submit">
-                                    <span>send message</span>
+                                    <span>{{ __('messages.contact_btn') }}</span>
                                     <i class="ti ti-angle-double-right"></i>
                                 </button>
                             </form>

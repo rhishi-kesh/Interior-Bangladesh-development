@@ -611,12 +611,6 @@
       background-color: #262626;
     }
 
-	/* Header-style-infostack */
-	.ttm-header-style-infostack .ttm-top-info-con, .ttm-topbar-wrapper ,
-	.ttm-header-style-infostack .ttm-rt-contact .ttm-custombutton{
-	    display: none;
-	}
-
 	/* Header-style-overlay */
 	.ttm-header-style-overlay .ttm-menu-toggle .toggle-block{ background-color: #fff; }
 

@@ -19,6 +19,8 @@ use App\Http\Controllers\ClientsController;
 | be assigned to the "web" middleware group. Make something great!
 |
 */
+Route::get('lang/change', [App\Http\Controllers\LangController::class, 'changeLang'])->name('changeLang');
+
 
 Route::get('/', [App\Http\Controllers\FrontendController::class, 'main'])->name('main');
 Route::get('/notfound', [App\Http\Controllers\FrontendController::class, 'notfound'])->name('notfound');

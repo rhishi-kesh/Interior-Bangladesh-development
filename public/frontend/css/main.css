@@ -2,6 +2,9 @@
 @import url('https://fonts.googleapis.com/css?family=Ubuntu:400,400i,500,500i,700,700i');
 @import url('https://fonts.googleapis.com/css2?family=Jura:wght@300;400;500;600;700&display=swap');
 
+html{
+    scroll-behavior: smooth !important;
+}
 /** Variables **/
 article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, section {
     display: block;
@@ -2115,6 +2118,29 @@ nav ul .active{
 .ttm-post-prev-next-buttons a{
     background-color: #fe0000;
 }
+.top-lan-icon select{
+    width: 90px !important;
+    height: 27px !important;
+    margin-right: 10px;
+    border-radius: 0px;
+    padding: 1px 5px 5px 5px;
+    font-size: 14px;
+}
+.top-header ul{
+    margin: 0 !important;
+    padding: 0 !important;
+}
+.top-header .contact-content{
+    display: flex;
+    justify-content: start;
+}
+.top-header .ttm-social-links-wrapper{
+    display: flex;
+    justify-content: end;
+}
+.top-header ul li a{
+    color: #fff;
+}
 @media screen and (min-width: 1200px){
   .carousel-inner .carousel-item > img{
     height: 100vh;
@@ -2131,6 +2157,14 @@ nav ul .active{
   }
 }
 @media screen and (max-width: 768px){
+    .top-header .contact-content{
+        display: block;
+        text-align: center;
+    }
+    .top-header .ttm-social-links-wrapper{
+        display: flex;
+        justify-content: center;
+    }
   #herosection .carousel-caption{
     padding-bottom: 0px;
   }
@@ -2203,7 +2237,4 @@ nav ul .active{
   #herosection .carousel-caption{
     padding-bottom: 120px;
   }
-}
-html{
-    scroll-behavior: smooth !important;
 }

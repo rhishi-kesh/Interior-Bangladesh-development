@@ -37,7 +37,7 @@
                       <!-- section title -->
                       <div class="section-title clearfix">
                           <div class="title-header sm-fixd-title">
-                              <h2 class="title text-uppercase text-center text-md-left">Why Choose Us</h2>
+                              <h2 class="title text-uppercase text-center text-md-left">{{ __('messages.choose_us') }}</h2>
                           </div>
                       </div><!-- section title end -->
                       <p class="text-center text-md-left">{{ $about->choose_us }}</p>
@@ -52,7 +52,7 @@
                                       </h4>
                                   </div>
                                   <div class="ttm-fid-contents">
-                                      <h3 class="ttm-fid-title">Projects Completed</h3>
+                                      <h3 class="ttm-fid-title">{{ __('messages.project_complete') }}</h3>
                                   </div>
                               </div><!-- ttm-fid end-->
                           </div>
@@ -66,7 +66,7 @@
                                       </h4>
                                   </div>
                                   <div class="ttm-fid-contents">
-                                      <h3 class="ttm-fid-title">Work Employed</h3>
+                                      <h3 class="ttm-fid-title">{{ __('messages.employed') }}</h3>
                                   </div>
                               </div><!-- ttm-fid end -->
                           </div>
@@ -80,13 +80,13 @@
                                       </h4>
                                   </div>
                                   <div class="ttm-fid-contents">
-                                      <h3 class="ttm-fid-title">Years Experiance</h3>
+                                      <h3 class="ttm-fid-title">{{ __('messages.experience') }}</h3>
                                   </div>
                               </div><!-- ttm-fid end -->
                           </div>
                       </div>
                       <div class="text-center text-md-left">
-                          <a href="{{ route('about_page') }}" class="go-about btn text-white">Explore More</a>
+                          <a href="{{ route('about_page') }}" class="go-about btn text-white">{{ __('messages.choose_us_btn') }}</a>
                       </div>
                   </div>
                   <div class="col-lg-5 col-sm-12 align-self-center d-none d-lg-block">
@@ -107,9 +107,9 @@
                       <!-- section title -->
                       <div class="section-title with-desc title-style-center_text clearfix">
                           <div class="title-header">
-                              <h2 class="title text-white">OUR SERVICE</h2>
+                              <h2 class="title text-white">{{ __('messages.service_title') }}</h2>
                           </div>
-                          <div class="title-desc mb-40 text-white">আপনার চাহিদা এবং বাজেট অনুযায়ী আপনার পরিসরের সৌন্দর্য ও নান্দনিকতা আনয়নে আমাদের ইন্টেরিয়র বাংলাদেশ।</div>
+                          <div class="title-desc mb-40 text-white">{{ __('messages.service_subtitle') }}</div>
                       </div><!-- section title end -->
                   </div>
                   <div class="col-md-2"></div>
@@ -135,7 +135,7 @@
               <div class="row service-btns">
                   <div class="col-lg-12">
                       <div class="text-center">
-                          <a class="ttm-btn ttm-btn-size-md ttm-btn-shape-square ttm-btn-style-border ttm-btn-color-black mb-10" href="{{ route('service_page') }}">Explore More Services</a>
+                          <a class="ttm-btn ttm-btn-size-md ttm-btn-shape-square ttm-btn-style-border ttm-btn-color-black mb-10" href="{{ route('service_page') }}">{{ __('messages.service_btn') }}</a>
                       </div>
                   </div>
               </div>
@@ -153,9 +153,9 @@
                       <!-- section title -->
                       <div class="section-title with-desc title-style-center_text clearfix">
                           <div class="title-header">
-                              <h2 class="title">OUR HONOURABLE CLIENTS</h2>
+                              <h2 class="title">{{ __('messages.our_client') }}</h2>
                           </div>
-                          <div class="title-desc mb-40">আমরা ক্লায়েন্টদের মতামতের ভিত্তিতে এবং তাদের প্রয়োজন অনুযায়ী  ডিজাইন ও কার্যকারিতার সমন্বয়ে পরিসেবা প্রদান করে থাকি।</div>
+                          <div class="title-desc mb-40">{{ __('messages.our_client_subtitle') }}</div>
                       </div><!-- section title end -->
                   </div>
                   <div class="col-md-2"></div>
@@ -188,9 +188,9 @@
                   <div class="col-12 col-md-8">
                         <div class="section-title with-desc title-style-center_text clearfix">
                             <div class="title-header">
-                                <h2 class="title text-center text-uppercase mt-4 mt-md-0">Team Member</h2>
+                                <h2 class="title text-center text-uppercase mt-4 mt-md-0">{{ __('messages.team_title') }}</h2>
                             </div>
-                            <p class="title-desc">ইন্টেরিয়র বাংলাদেশ  হল পরিশ্রমী, কল্পনাপ্রসূত, উদ্ভাবনী চিন্তাবিদদের একটি দল যারা তাদের মেধা ও শ্রম দিয়ে সকলের স্বপ্ন পূরণের জন্য সর্বদা কাজ করে যাচ্ছে</p>
+                            <p class="title-desc">{{ __('messages.team_subtitle') }}</p>
                         </div>
                   </div>
               </div>
@@ -219,7 +219,7 @@
               <div class="row service-btns">
                   <div class="col-lg-12">
                       <div class="text-center mt-60">
-                          <a class="ttm-btn ttm-btn-size-md ttm-btn-shape-square ttm-btn-style-border ttm-btn-color-black mb-10" href="{{ route('team_page') }}">Explore More Members</a>
+                          <a class="ttm-btn ttm-btn-size-md ttm-btn-shape-square ttm-btn-style-border ttm-btn-color-black mb-10" href="{{ route('team_page') }}">{{ __('messages.team_btn') }}</a>
                       </div>
                   </div>
               </div>
@@ -235,9 +235,9 @@
                   <div class="col-md-8">
                       <div class="section-title with-desc title-style-center_text clearfix">
                           <div class="title-header">
-                              <h2 class="title text-uppercase">Our Working Process</h2>
+                              <h2 class="title text-uppercase">{{ __('messages.work_process_title') }}</h2>
                           </div>
-                          <div class="title-desc">আপনি শুধু আপনার ধারনা আমাদের সাথে শেয়ার করুন এবং আমরা নিশ্চিত করব যে আপনার ধারনা এবং আমাদের ডিজাইন মিলে একটি সেরা প্রজেক্টে রুপ নিবে যা ইন্টেরিয়র বাংলাদেশ দ্বারা সম্পাদন করা হবে।  স্বপ্ন আপনার বাস্তবায়নের দায়িত্ব আমাদের। </div>
+                          <div class="title-desc">{{ __('messages.work_process_subtitle') }}</div>
                       </div>
                   </div>
                   <div class="col-md-2"></div>
@@ -248,8 +248,8 @@
                          <div class="work-process-number">
                              01
                          </div>
-                         <h4 class="card-title">Idea & Design</h4>
-                         <p>এই ধাপে আমরা ক্লাইন্ট এর সাথে প্রথমবার মিটিং করি এবং তাদের আইডিয়া, তাদের চাহিদা সম্পর্কে বিস্তারিত জানি বা জানার চেষ্টা করি। </p>
+                         <h4 class="card-title">{{ __('messages.process1_title') }}</h4>
+                         <p>{{ __('messages.process1_subtitle') }}</p>
                          <i class="fa fa-handshake-o" aria-hidden="true"></i>
                      </div>
                  </div>
@@ -258,10 +258,8 @@
                          <div class="work-process-number">
                              02
                          </div>
-                         <h4 class="card-title">Specification</h4>
-                         <p>পরবর্তীতে ক্লায়েন্টের মতামত অনুযায়ী কার্যস্থান দর্শন এবং পর্যবেক্ষণ করা হয়। সেই অনুযায়ী নকশা তৈরি করে বিস্তারিত তথ্য যক্ত করে প্রপোজাল লেটার পাঠানো হয়।
-                            পরিশেষে ক্লায়েন্টের সব পছন্দ হলে অন্তিম মিটিং করার মাধ্যমে মৌ (MOU) সাইনিং এর মধ্য দিয়ে চূড়ান্ত চুক্তি সম্পাদন হয়।
-                            </p>
+                         <h4 class="card-title">{{ __('messages.process2_title') }}</h4>
+                         <p>{{ __('messages.process2_subtitle') }}</p>
                          <i class="fa fa-rocket" aria-hidden="true"></i>
                      </div>
                  </div>
@@ -270,8 +268,8 @@
                          <div class="work-process-number">
                              03
                          </div>
-                         <h4 class="card-title">Execution</h4>
-                         <p>সবকিছু শেষে মাঠ পর্যায়ের কাজ শুরু হবে এবং চুক্তিপত্রে  বর্ণিত তারিখ অনুযায়ী কাজটি হ্যান্ডওভার করা হবে। </p>
+                         <h4 class="card-title">{{ __('messages.process3_title') }}</h4>
+                         <p>{{ __('messages.process3_subtitle') }}</p>
                          <i class="fa fa-handshake-o" aria-hidden="true"></i>
                      </div>
                  </div>
@@ -290,9 +288,9 @@
                       <!-- section title -->
                       <div class="section-title with-desc title-style-center_text clearfix">
                           <div class="title-header">
-                              <h2 class="title text-white text-uppercase">OUR Blog</h2>
+                              <h2 class="title text-white text-uppercase">{{ __('messages.blog_title') }}</h2>
                           </div>
-                          <div class="title-desc mb-40 text-white">আমাদের ইন্টেরিয়র সেবা ও কাজগুলো সম্পর্কে বিস্তারিত জানতে আমাদের ব্লগগুলো দেখুন।</div>
+                          <div class="title-desc mb-40 text-white">{{ __('messages.blog_subtitle') }}</div>
                       </div><!-- section title end -->
                   </div>
                   <div class="col-md-2"></div>
@@ -322,7 +320,7 @@
               <div class="row service-btns">
                   <div class="col-lg-12">
                       <div class="text-center mt-60">
-                          <a class="ttm-btn ttm-btn-size-md ttm-btn-shape-square ttm-btn-style-border ttm-btn-color-black mb-10" href="{{ route('content_blog_page') }}">Explore More Blogs</a>
+                          <a class="ttm-btn ttm-btn-size-md ttm-btn-shape-square ttm-btn-style-border ttm-btn-color-black mb-10" href="{{ route('content_blog_page') }}">{{ __('messages.blog_btn') }}</a>
                       </div>
                   </div>
               </div>
@@ -340,9 +338,9 @@
                       <!-- section title -->
                       <div class="section-title with-desc title-style-center_text clearfix">
                           <div class="title-header">
-                              <h2 class="title">HAPPY CLIENTS</h2>
+                              <h2 class="title">{{ __('messages.client_review_title') }}</h2>
                           </div>
-                          <div class="title-desc mb-40 mb-0">ক্লায়েন্টদের খুশি করার লক্ষে এবং সপ্নকে বাস্তবে রুপ দেওয়ার জন্য ইন্টেরিয়র বাংলাদেশ নিষ্ঠার সাথে প্রতিনিয়ত কাজ করে যাচ্ছে।সেই সাথে আপনি আপনার চাহিদা অনুযায়ী সর্বাধুনিক কাজও পেয়ে থাকবেন।</div>
+                          <div class="title-desc mb-40 mb-0">{{ __('messages.client_review_subtitle') }}</div>
                       </div><!-- section title end -->
                   </div>
                   <div class="col-md-2"></div>
