@@ -44,3 +44,7 @@ php artisan migrate
 ```sh
 php artisan db:seed
 ```
+
+```sh
+php artisan serve
+```
