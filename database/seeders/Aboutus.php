@@ -13,7 +13,7 @@ class Aboutus extends Seeder
      */
     public function run(): void
     {
-        DB::table('About')->insert(
+        DB::table('abouts')->insert(
             [
                 'choose_us' => 'Lorem ipsum dolor sit amet consectetur adipisicing, elit. Corporis ducimus, sunt ipsam alias culpa quod repellat beatae sit, asperiores blanditiis repellendus quidem maiores ad numquam error sequi! Similique quaerat architecto quidem doloremque, est nihil repellendus repudiandae dolores aut enim hic sed rerum aspernatur laudantium in illo dolorem cumque facere. Provident.',
                 'choose_us_image' => 'bird1.jpg',

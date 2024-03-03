@@ -48,3 +48,7 @@ php artisan db:seed
 ```sh
 php artisan serve
 ```
+
+For Admin or User Login `[Project-Location]/login` <br>
+Admin gmail = `admin@gmail.com` & password = `admin` <br>
+User gmail = `user@gmail.com` & password = `user`
